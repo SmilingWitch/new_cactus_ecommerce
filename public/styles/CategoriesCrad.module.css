@@ -17,4 +17,6 @@
     position: relative;
     width: 80px;
     height: 80px;
+    border-radius: var(--border-radius);
+    overflow: hidden;
 }

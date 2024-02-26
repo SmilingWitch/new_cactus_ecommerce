@@ -33,6 +33,7 @@
 }
 .icon{
     color: var(--font_color);
+    font-size: 1.5em;
 }
 .price{
     position: relative;
