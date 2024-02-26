@@ -1,0 +1,84 @@
+.card{
+    position: relative;
+    height: 200px;
+    background: var(--greySpace);
+    border-radius: var(--border-radius);
+    overflow: hidden;  
+    cursor: pointer;
+}
+.image_bx{
+    position: relative;
+    height: 70%;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+}
+.info{
+    position: relative;
+    color: var(--secundary_header);
+    font-size: 0.8em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+    width: 100%;
+    height: 30%;
+}
+.header{
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.icon{
+    color: var(--font_color);
+}
+.price{
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    color: var(--font_color); 
+    margin-top: 5px;
+}
+.actual{
+    font-family: "PoppinsBolder";
+}
+.old{
+    font-size: 0.7em;
+    font-family: "PoppinsBolder";
+    margin-left: 5px;  
+}
+.btn_bx{
+    position: absolute;
+    z-index: 1000;
+    width: 100%;
+    height: 100%;
+    background: rgba(189, 238, 129, 0.4);
+    visibility: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s;
+}
+.card:hover .btn_bx{ 
+    visibility: visible;
+}
+
+.btn_bx button{
+    position: relative;
+    width: 100px;
+    height: 40px;
+    border-radius: var(--border-radius);
+    /*background: rgb(119, 220, 119);*/
+    background: var(--colorResalt);
+    border: none;
+    color: whitesmoke;
+    font-size: 0.8em;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.btn_bx button:hover{
+    background:rgb(53, 96, 53) ;
+}
