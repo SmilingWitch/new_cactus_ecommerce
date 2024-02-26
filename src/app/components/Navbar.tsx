@@ -26,7 +26,7 @@ export default function Navbar(){
             
             <div className={style.icon_bx}>
                 <div className={style.icon}>
-                    <GoSearch/>
+                    <Link href = "/search"><GoSearch/></Link>
                 </div>
                 <div className={style.icon}>
                     <FaBasketShopping/>
