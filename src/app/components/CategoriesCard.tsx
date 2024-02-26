@@ -19,7 +19,7 @@ export default function CategoriesCard(props: React.PropsWithChildren<MyComponen
                 <h4>{props.name}</h4>
             </div>
             <div className={style.image_bx}>
-                <Image  src="/images/junior-rodriguez-gsCecg8nrAY-unsplash.jpg"  
+                <Image  src={props.url}  
                         layout="fill"
                         objectFit="cover"
                         alt = "Description"/>
