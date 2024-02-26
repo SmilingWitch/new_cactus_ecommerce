@@ -1,3 +1,17 @@
+@font-face {
+  font-family: "PoppinsRegular";
+  src: url("../../public//fonts/Poppins-Regular.ttf");
+}
+@font-face {
+  font-family: "PoppinsBold";
+  src: url("../../public/fonts/Poppins-Medium.ttf");
+}
+@font-face {
+  font-family: "PoppinsBolder";
+  src: url("../../public/fonts/Poppins-Bold.ttf");
+}
+
+
 :root {
   --max-width: 1100px;
   --border-radius: 12px;
@@ -41,7 +55,11 @@
 
 
 
-  --font_color: rgb(23, 23, 23)
+  --font_color: rgb(56, 56, 56);
+  --secundary_header: rgb(93, 92, 92);
+  --greySpace: rgb(234, 231, 231);
+  --border-radius: 10px;
+  --colorResalt: rgb(85, 155, 85)
 }
 
 
@@ -83,6 +101,7 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+  font-family: "PoppinsRegular";
 }
 
 html,
