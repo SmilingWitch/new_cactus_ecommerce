@@ -1,0 +1,48 @@
+.card{
+    position: relative;
+    height: 200px;
+    background: var(--greySpace);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+}
+
+.cont{
+    position: absolute;
+    z-index: 1000;
+    width: 100%;
+    height: 100%;
+    background: rgba(245, 245, 245, 0.4);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s;
+}
+.header{
+    font-family: "PoppinsBolder";
+    font-size: 20px;
+}
+.secundary_header{
+    font-size: 0.8em;
+}
+.btn_bx{
+    position: relative;
+    margin-top: 16px;
+}
+
+.btn_bx button{
+    position: relative;
+    width: 100px;
+    height: 40px;
+    border-radius: var(--border-radius);
+    /*background: rgb(119, 220, 119);*/
+    background: var(--colorResalt);
+    border: none;
+    color: whitesmoke;
+    font-size: 0.8em;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.btn_bx button:hover{
+    background:rgb(53, 96, 53) ;
+}
