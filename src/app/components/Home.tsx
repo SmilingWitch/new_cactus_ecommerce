@@ -7,6 +7,7 @@ import OfferCard from "./OffertCard";
 import TrendigCard from "./TrendingCard";
 import PickCard from "./PickCard";
 import BlogCard from "./BlogCrad";
+import Link from "next/link"
 
 export default function Home(){
     return(
@@ -24,10 +25,15 @@ export default function Home(){
                     <div className={style.search_bx}>
                         <div className={style.input_bx}>
                             <input type="text" name="" id="" placeholder="What plant are you searching for?" />
-                            <div className={style.icon_bx}><GoSearch className={style.icon}/></div>
+                            <Link href="/search">
+                                <div className={style.icon_bx}><GoSearch className={style.icon}/>
+                                </div>
+                            </Link>
                         </div>
                         <div className={style.btn}>
+                        <Link href="/search">
                             <button>Search</button>
+                        </Link>
                         </div>
 
                     </div>
@@ -45,12 +51,12 @@ export default function Home(){
             <div className={style.categories}>
                 <h2>Categories</h2>
                 <div className={style.categories_bx}>
-                    <CategoriesCard name="Cactus" url = "hbh" redirect_url=""/>
-                    <CategoriesCard name="Succulents" url = "hbh" redirect_url =""/>
-                    <CategoriesCard name="Fertilizers" url = "hbh" redirect_url =""/>
-                    <CategoriesCard name="Planters" url = "hbh" redirect_url =""/>
-                    <CategoriesCard name="Tools &" url = "hbh" redirect_url =""/>
-                    <CategoriesCard name="Books &" url = "hbh" redirect_url =""/>
+                    <CategoriesCard name="Cactus" url = "/images/diego-lozano-kGnRkbKnqq4-unsplash.jpg" redirect_url=""/>
+                    <CategoriesCard name="Succulents" url = "/images/erol-ahmed-aIYFR0vbADk-unsplash.jpg" redirect_url =""/>
+                    <CategoriesCard name="Fertilizers" url = "/images/daniel-oberg-sEApBUS4fIk-unsplash.jpg" redirect_url =""/>
+                    <CategoriesCard name="Planters" url = "/images/scott-webb-WwWkgOMU8H8-unsplash.jpg" redirect_url =""/>
+                    <CategoriesCard name="Tools &" url = "/images/david-rangel-dAeQlhD7zRk-unsplash.jpg" redirect_url =""/>
+                    <CategoriesCard name="Books &" url = "/images/ha-nguy-n-2s1cB4QRid4-unsplash.jpg" redirect_url =""/>
                 </div>
             </div>
 
