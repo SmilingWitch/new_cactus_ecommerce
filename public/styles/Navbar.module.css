@@ -1,0 +1,36 @@
+.cont{
+    position: relative;
+    height: 100px;
+    width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 2px solid rgba(142, 140, 140,0.5);
+}
+.first{
+    position: relative;
+    display: flex;
+    justify-content: flex-start;
+}
+.headers{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.link{
+    position: relative;
+    margin-left: 20px;
+    font-family: "PoppinsBolder";
+    text-transform: uppercase;
+}
+.icon_bx{
+    position: relative;
+    display: flex;
+}
+.icon{
+    margin-left: 20px; 
+    font-size: 1.3em;
+    cursor: pointer;
+}
