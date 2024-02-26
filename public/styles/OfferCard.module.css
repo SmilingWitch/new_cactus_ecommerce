@@ -1,0 +1,72 @@
+.card{
+    position: relative;
+    width: 100%;
+    height: 300px;
+    border-radius: var(--border-radius);
+    background: var(--greySpace);
+    margin-top: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.header{
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.principal_header{
+    font-size: 20px;
+    font-family: "PoppinsBolder";
+}
+.image_bx{
+    position: relative;
+    height: 150px;
+    width: 100%;
+}
+.secundary_header{
+    color: var(--secundary_header);
+    font-size: 0.8em;
+}
+.btn_bx button{
+    position: relative;
+    width: 100px;
+    height: 40px;
+    border-radius: var(--border-radius);
+    /*background: rgb(119, 220, 119);*/
+    background: var(--colorResalt);
+    border: none;
+    color: whitesmoke;
+    font-size: 0.8em;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.btn_bx button:hover{
+    background:rgb(53, 96, 53) ;
+}
+.img{
+    border-radius: var(--border-radius);
+}
+.descount{
+    position: absolute;
+    width: 70px;
+    height: 70px;
+    background: var(--colorResalt);
+    border-radius: 50%;
+    left: -10px;
+    bottom: 90px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.descount span{
+    color: whitesmoke;
+    font-family: "PoppinsBolder";
+}
+
