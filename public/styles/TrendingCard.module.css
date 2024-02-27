@@ -32,7 +32,7 @@
     justify-content: space-between;
 }
 .icon{
-    color: var(--font_color);
+    color: rgb(206, 10, 10);
     font-size: 1.5em;
 }
 .price{
