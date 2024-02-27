@@ -17,9 +17,10 @@ export default function Navbar(){
                 </div>
                 <div className={style.headers}>
                     <Link className={style.link}  href = "/home">Home</Link>
-                    <Link className={style.link} href = "/categories">Categories</Link>
+                    <Link className={style.link} href = "/contact">Shop</Link>
+                    <Link className={style.link} href = "/categories/plants/All">Cactus & Succulents</Link>
+                    <Link className={style.link} href = "/categories/accesories/All">Accesories</Link>
                     <Link className={style.link} href = "/blog">Blog</Link>
-                    <Link className={style.link} href = "/contact">Contact</Link>
                 </div>
 
             </div>
