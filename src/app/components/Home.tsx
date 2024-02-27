@@ -51,21 +51,21 @@ export default function Home(){
             <div className={style.categories}>
                 <h2>Categories</h2>
                 <div className={style.categories_bx}>
-                    <CategoriesCard name="Cactus" url = "/images/diego-lozano-kGnRkbKnqq4-unsplash.jpg" redirect_url=""/>
-                    <CategoriesCard name="Succulents" url = "/images/erol-ahmed-aIYFR0vbADk-unsplash.jpg" redirect_url =""/>
-                    <CategoriesCard name="Fertilizers" url = "/images/daniel-oberg-sEApBUS4fIk-unsplash.jpg" redirect_url =""/>
-                    <CategoriesCard name="Planters" url = "/images/scott-webb-WwWkgOMU8H8-unsplash.jpg" redirect_url =""/>
-                    <CategoriesCard name="Tools &" url = "/images/david-rangel-dAeQlhD7zRk-unsplash.jpg" redirect_url =""/>
-                    <CategoriesCard name="Books &" url = "/images/ha-nguy-n-2s1cB4QRid4-unsplash.jpg" redirect_url =""/>
+                    <CategoriesCard name="Cactus" url = "/images/diego-lozano-kGnRkbKnqq4-unsplash.jpg" redirect_url="/categories/plants/Cactus"/>
+                    <CategoriesCard name="Succulents" url = "/images/erol-ahmed-aIYFR0vbADk-unsplash.jpg" redirect_url ="/categories/plants/Succulents"/>
+                    <CategoriesCard name="Fertilizers" url = "/images/daniel-oberg-sEApBUS4fIk-unsplash.jpg" redirect_url ="/categories/accesories/Fertilizers"/>
+                    <CategoriesCard name="Planters" url = "/images/scott-webb-WwWkgOMU8H8-unsplash.jpg" redirect_url ="/categories/accesories/Planters"/>
+                    <CategoriesCard name="Tools &" url = "/images/david-rangel-dAeQlhD7zRk-unsplash.jpg" redirect_url ="/categories/accesories/Tools"/>
+                    <CategoriesCard name="Books &" url = "/images/ha-nguy-n-2s1cB4QRid4-unsplash.jpg" redirect_url ="/categories/accesories/Books"/>
                 </div>
             </div>
 
             <div className={style.offets_bx}>
                 <div className={style.special}>
                     <div className={style.special_header}>
-                        <div className={style.special_icon_bx}>
+                        {/*<div className={style.special_icon_bx}>
                             <PiCactusFill className={style.special_icon}/>
-                        </div>
+                        </div>*/}
                         <div className={style.header1}>
                             Special offers
                         </div>
@@ -94,9 +94,9 @@ export default function Home(){
                 <div className={style.trending}>
                     <div className={style.trending_cont}>
                         <div className={style.special_header}>
-                            <div className={style.special_icon_bx}>
+                            {/*<div className={style.special_icon_bx}>
                                 <PiCactusFill className={style.special_icon}/>
-                            </div>
+                            </div>*/}
                             <div className={style.header1}>
                                 Trending products
                             </div>
@@ -114,9 +114,9 @@ export default function Home(){
                     <div className={style.picks}>
 
                         <div className={style.special_header}>
-                            <div className={style.special_icon_bx}>
+                            {/*<div className={style.special_icon_bx}>
                                 <PiCactusFill className={style.special_icon}/>
-                            </div>
+                            </div>*/}
                             <div className={style.header1}>
                                 Popular Picks
                             </div>
