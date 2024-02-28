@@ -1,6 +1,6 @@
 "use client"
+import Navbar from "@/components/Navbar";
 import {useState} from "react"
-import Navbar from "../components/Navbar"
 import  { ReactNode } from "react";
 
 interface RootLayoutProps {

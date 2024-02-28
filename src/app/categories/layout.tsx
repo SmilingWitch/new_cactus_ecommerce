@@ -1,8 +1,9 @@
 "use client"
 
+import SideBar from "@/components/SideBar";
+import NavbarSearch from "@/components/search_plants/NavbarSearch";
 import {useState} from "react"
-import NavbarSearch from "../components/search_plants/NavbarSearch";
-import SideBar from "../components/SideBar";
+
 import  { ReactNode } from "react";
 
 interface RootLayoutProps {
