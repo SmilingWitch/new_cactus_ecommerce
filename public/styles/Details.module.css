@@ -1,6 +1,6 @@
 .cont{
     position: relative;
-    min-height: 100dvh
+    min-height: calc(100dvh - 80px);
 }
 .header{
     position: relative;
