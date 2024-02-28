@@ -2,7 +2,7 @@
 import style from "../../public/styles/Details.module.css"
 import { GoStarFill } from "react-icons/go";
 import { GoStar } from "react-icons/go";
-import Image from "next/Image"
+import Image from "next/image"
 import Link from "next/link"
 import { RiArrowLeftSLine } from "react-icons/ri";
 import { useRouter } from 'next/navigation';
