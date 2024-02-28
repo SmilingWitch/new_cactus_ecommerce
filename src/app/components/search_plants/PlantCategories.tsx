@@ -9,40 +9,36 @@ import { IoIosArrowDown } from "react-icons/io";
 
 export default function PlantCategories(){
     const validCategories = ['All', 'Cactus', 'Succulents'];
-    const param = useParams()
-    const router = useRouter()
+    const param = useParams();
+    const router = useRouter();
     const category = param.categories; // Elimina "/plants/" de la URL
-    console.log("Categoria",category)
+    console.log("Categoria", category);
     const categoryString = typeof category === 'string' ? category : '';
-
-
+    const [visible, setVisible] = useState(false);
+    const options = ["Price", "Date", "Popular"];
+    const [selectedOption, setSelectedOption] = useState("Date");
+    const [formValue, setFormValue] = useState({
+      type: "Date" 
+    });
+  
+  
     if (!validCategories.includes(categoryString)) {
       // Redirige a una página de error o a otro lugar
       router.replace('/error');
       return null;
     }
-
-    const [visible,setVisible] = useState(false)
-    const options = ["Price", "Date", "Popular"]
-    const [selectedOption, setSelectedOption] = useState("Date");
-
-    const [formValue, setFormValue] = useState({
-        type: "Date" 
-     });
-
-    const handleClick = (option:string) => {
-        setSelectedOption(option);
-        setFormValue(prevState => ({
-            ...prevState,
-            type: option
-        }));
+  
+    
+    const handleClick = (option: string) => {
+      setFormValue(prevState => ({
+        ...prevState,
+        type: option
+      }));
     };
-
-
-
-    const handleCategoryChange = (category:string) => {
-        router.push(`/categories/plants/${category}`);
-      };
+  
+    const handleCategoryChange = (category: string) => {
+      router.push(`/categories/plants/${category}`);
+    }
 
 
     return(
@@ -76,7 +72,7 @@ export default function PlantCategories(){
                   
                       {visible && <div className={style.options}>
                           {options.map((option, index) => (
-                            <div key={index} onClick={() =>{ handleClick(option); setVisible(false)}} className={style.option}>
+                            <div key={index} onClick={() =>{ handleClick(option); setVisible(false);setSelectedOption(option)}} className={style.option}>
                               {option}
                             </div>
                           ))}

@@ -11,19 +11,12 @@ import ProductCardSearch from '../search_plants/ProductCardSearch';
 
 export default function SearchAccesories(){
 
-        const validCategories = ["All","Fertilizers", "Planters", "Tools", "Books"];
+    const validCategories = ["All","Fertilizers", "Planters", "Tools", "Books"];
     const param = useParams()
     const router = useRouter()
     const category = param.categories; // Elimina "/plants/" de la URL
     console.log("Categoria",category)
     const categoryString = typeof category === 'string' ? category : '';
-
-    if (!validCategories.includes(categoryString)) {
-      // Redirige a una página de error o a otro lugar
-      router.replace('/error');
-      return null;
-    }
-
     const [visible,setVisible] = useState(false)
     const options = ["Date", "Price", "Popular"]
     const [selectedOption, setSelectedOption] = useState("Date");
@@ -32,15 +25,19 @@ export default function SearchAccesories(){
         type: "Date" 
      });
 
+    if (!validCategories.includes(categoryString)) {
+      // Redirige a una página de error o a otro lugar
+      router.replace('/error');
+      return null;
+    }
+
     const handleClick = (option:string) => {
-        setSelectedOption(option);
+        
         setFormValue(prevState => ({
             ...prevState,
             type: option
         }));
     };
-
-
 
     const handleCategoryChange = (category:string) => {
         router.push(`/categories/accesories/${category}`);
@@ -79,7 +76,7 @@ export default function SearchAccesories(){
                   
                       {visible && <div className={style.options}>
                           {options.map((option, index) => (
-                            <div key={index} onClick={() =>{ handleClick(option); setVisible(false)}} className={style.option}>
+                            <div key={index} onClick={() =>{ handleClick(option); setVisible(false), setSelectedOption(option)}} className={style.option}>
                               {option}
                             </div>
                           ))}
