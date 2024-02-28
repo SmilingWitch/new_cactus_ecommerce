@@ -1,0 +1,28 @@
+.cont{
+    position: relative;
+    width: 100%;
+    min-height: calc(100dvh - 80px);
+}
+.cart{
+    position: relative;
+    width: 100%;
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: 2fr 1fr;
+    padding-top: 50px;
+}
+.tota_product_card{
+    position: static;
+    width: 100%;
+    height: 200px;
+    border-radius: var(--border-radius);
+    background: var(--greySpace);
+    border: 1px solid rgba(169, 167, 167, 0.4);
+    transition: 0.5s;
+}
+.header{
+    position: relative;
+    width: 100%;
+    background: var(--greySpace);
+    height: 20dvh;
+}
