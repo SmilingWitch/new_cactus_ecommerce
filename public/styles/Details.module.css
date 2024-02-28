@@ -1,0 +1,123 @@
+.cont{
+    position: relative;
+    min-height: 100dvh
+}
+.header{
+    position: relative;
+    width: 100%;
+    height: 100px;
+    display: flex;
+    align-items: center;
+}
+.back{
+    position: relative;
+    display: flex;
+    align-items: center;
+    font-size: 20px;
+    cursor: pointer;
+}
+ .icon{
+    position: relative;
+    font-family: "PoppinsBolder";
+    transition: 0.3s;
+    right: 0;
+}
+.back span{
+    position: relative;
+    font-family: "PoppinsBolder";
+    left: 10px;
+}
+.back:hover .icon{
+    right: 5px;
+}
+.image{
+    position: relative;
+    width: 150px;
+    height: 200px;
+    margin-bottom: 16px;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    cursor: pointer;
+}
+.image1{
+    position: relative;
+    width: 60%;
+    height: 50dvh;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+}
+.gallery{
+    position: relative;
+    width: 50%;
+    min-height: 50dvh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+.images_bx{
+    position: relative;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+.details_bx{
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.info{
+    position: relative;
+    width: 40%;
+    height: 50dvh;
+    display:flex;
+    justify-content: space-around;
+    flex-direction: column;
+}
+.name{
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.name span{
+    position: relative;
+    font-size: 20px;
+    font-family: "PoppinsBolder";
+}
+.text{
+    font-size: 0.8em;
+}
+.btn{
+    position: relative;
+    width: 150px;
+    height: calc(1.5rem + 2vh);
+    margin: 0 auto;
+}
+
+.btn button{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-radius: var(--border-radius);
+    /*background: rgb(119, 220, 119);*/
+    background: var(--colorResalt);
+    border: none;
+    color: whitesmoke;
+    font-size: 0.8em;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.btn button:hover{
+    background:rgb(53, 96, 53) ;
+}
+.stars_bx{
+    position: relative;
+    font-size: 0.8em;
+    color: rgb(218, 185, 3);
+}
