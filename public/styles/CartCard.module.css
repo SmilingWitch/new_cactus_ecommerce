@@ -1,0 +1,93 @@
+.card{
+    position: relative;
+    width: 100%;
+    padding: 15px;
+    height: 150px;
+    border: 1px solid rgba(169, 167, 167, 0.4);
+    border-radius: var(--border-radius);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 16px;
+}
+.header{
+    position: relative;
+    width: 100%;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    background: red;
+}
+.image_bx{
+    position: relative;
+    width: 150px;
+    height: 100%;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+}
+.info_bx{
+    position: relative;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+.info{
+    position: relative;
+    margin-left: 30px;
+}
+.name{
+    position: relative;
+    font-size: 20px;
+    margin-bottom: 16px;
+}
+
+.bx{
+    position: relative;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.qty_info{
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+}
+.qty{
+    position: relative;
+    display: flex;
+    margin-bottom: 16px;
+}
+.btn_bx{
+    position: relative;
+    margin-left: 30px;
+    display: flex;
+}
+.btn_bx span{
+    position: relative;
+    cursor: pointer;
+    margin-left: 5px;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--border-radius);
+    transition: 0.3s;
+}
+.btn_bx span:hover{
+    background: var(--greySpace);;
+}
+.btn{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.icon{
+    cursor: pointer;
+}
