@@ -7,6 +7,12 @@
     align-items: center;
     justify-content: space-between;
 }
+.logo{
+    position: relative;
+    width: 80px;
+    height: 60px;
+    padding-left: 10px;
+}
 .first{
     position: relative;
     display: flex;
@@ -17,28 +23,25 @@
     display: flex;
     align-items: center;
 }
-.link{
-    position: relative;
-    margin-left: 20px;
-    font-family: "PoppinsBolder";
-    
-}
 .icon_bx{
     position: relative;
     display: flex;
     
 }
 .icon{
-    margin-left: 20px; 
-    font-size: 1.3em;
+    position: relative;
+    margin-right: 20px; 
+    font-size: calc(0.8rem + 0.5vw);
     cursor: pointer;
 }
 
 .input_bx{
     position: relative;
-    width: 350px;
+    /*width: 350px;*/
+    width: calc(9rem + 10vw);
     background: var(--greySpace);
     height: calc(1.5rem + 2vh);
+    /*height: calc(1.5rem + 1vw);*/
     border-radius: var(--border-radius);
     overflow: hidden;
     display: flex;
@@ -58,5 +61,29 @@
     font-size: 0.8em;
 }
 .input_bx .icon{
-    font-size: 1em;
+    font-size: calc(0.8rem + 0.5vw);
 }
+@media(max-width: 1020px){
+    .cont{
+      width: 100%;
+      padding-left: 10px;
+    }
+    
+  }
+  @media(max-width: 420px){
+    .logo{
+        position: relative;
+        width: 70px;
+        height: 50px;
+        padding-left: 10px;
+    }
+    .icon{
+       margin-right: 15px; 
+    }
+    .input_bx{
+        width: 10rem;
+        height: 2rem;
+
+    }
+
+  }

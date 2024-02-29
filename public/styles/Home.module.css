@@ -2,11 +2,6 @@
     position: relative;
     width: 100%;
 }
-.bx{
-    width: 1000px;
-    margin: 0 auto;
-}
-
 .front_page{
     position: relative;
     width: 100%;
@@ -19,16 +14,15 @@
     position: relative;
     width: 600px;
     height: 20vh;
-    height: 300px;
-    
+    height: 300px;   
 }
 .header h1{
     font-family: "PoppinsBolder";
-    font-size: calc(1.2em + 2vh);
+    font-size: calc(1.2em + 1vw);
 }
 .header h3{
     position: relative;
-    margin-top: 16px;
+    margin-top: calc(16px + 1vw);
     color: var(--secundary_header);
 }
 .search_bx{
@@ -36,11 +30,16 @@
     margin-top: 50px;
     display: flex;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: space-between;
+    background: whitesmoke;
+    /*width: 420px;*/
+    width: var(100px + 8vw);
+    padding: 10px;
+    border-radius: var(--border-radius);
 }
 .input_bx{
     position: relative;
-    width: 350px;
+    width: 75%;
     background: var(--greySpace);
     height: calc(1.5rem + 2vh);
     border-radius: var(--border-radius);
@@ -54,11 +53,12 @@
 }
 .input_bx input{
     position: relative;
-    width: 80%;
+    width: 90%;
     outline: none;
     background: transparent;
     border: none;
     color: var(--font_color);
+    font-size: 0.8em;
 }
 .icon_bx{
     position: relative;
@@ -69,22 +69,28 @@
 }
 .btn{
     position: relative;
-    width: 150px;
     height: calc(1.5rem + 2vh);
+}
+.btn_bx{
+    width: 150px ;
+    margin-top: 3dvh;
+    visibility: hidden;
 }
 .btn button{
     position: relative;
     width: 100%;
     height: 100%;
+    padding: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
     border-radius: var(--border-radius);
     /*background: rgb(119, 220, 119);*/
     background: var(--colorResalt);
     border: none;
     color: whitesmoke;
-    font-size: 1em;
+    font-size: 0.8em;
     cursor: pointer;
     transition: 0.3s;
-    margin-left: 16px;
 }
 .btn button:hover{
     background:rgb(53, 96, 53) ;
@@ -104,7 +110,7 @@
 .categories{
     position: relative;
     width: 100%;
-    min-height: 35dvh;
+    min-height: 25dvh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -117,10 +123,10 @@
 .categories_bx{
     position: relative;
     width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between; 
-    margin-top: 10vh;
+    grid-gap: 16px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px,1fr)); 
+   /* margin-top: 10vh;*/
     
 }
 .offets_bx{
@@ -138,21 +144,26 @@
     padding: 30px;
     padding-right: 50px;
     padding-left: 0px;
+    height: 100%;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    justify-content: flex-start;
+    justify-content: space-between;
+    
     
 }
 .trending{
     position: relative;
+    height: 100%;
     padding: 30px;
     padding-right: 0px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
+
 }
+
 .trending_cont, .picks{
     position: relative;
     width: 100%;
@@ -208,7 +219,8 @@
     margin-top: 16px;
     display: grid;
     grid-gap: 16px;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    /*grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));*/
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 }
 .counter{
     position: relative;
@@ -277,19 +289,15 @@
     width: 100%;
     background: var(--greySpace);
     margin-top: 10vh;
-}
-.blog .bx{
-    position: relative;
     padding-top: 10vh;
     padding-bottom: 10vh;
 }
-.blog .bx h2{
+.header_bx{
     position: relative;
     font-family: "PoppinsBolder";
     margin-bottom: 16px;
     width: 100%;
-    text-align: center;
-    
+    text-align: center;    
 }
 .blog_card_bx{
     position: relative;
@@ -298,4 +306,85 @@
     grid-gap: 16px;
     margin-top: 10vh;
     grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
+}
+
+
+@media(max-width:1027px){
+    .picks{
+        margin-top: 30px;
+    }
+}
+@media(max-width:899px){
+    
+    .front_img_bx{
+        position: absolute;
+        z-index: -1;
+        width: 100%;
+        height: 90%;
+        border-radius: var(--border-radius);
+        display: flex;
+        align-items: flex-start;
+    }
+    .img{
+        position: relative;
+    }
+    .header{
+        margin-bottom: 45dvh;
+        width: 90%;
+    }
+    .header h1{
+        font-size: calc(1.2em + 2.5vw);
+        text-align: center;
+    }
+    .header h3{
+        font-size: 1em;
+        text-align: center;
+    }
+    
+}
+@media(max-width:807px){
+    .offets_bx{
+        min-height: calc(100dvh - 80px);
+        margin-top: 10vh;
+        display: flex;
+        flex-direction: column;
+    }
+    .special{
+        width: 100%;
+        padding: 0;
+    }
+    .offer{
+        display: grid;
+        grid-gap: 16px;
+        grid-template-columns: repeat(auto-fill, minmax(150px,1fr));
+    }
+    .counter{
+        width: 250px;
+        margin: 0 auto;
+        margin-top: 16px;
+    }
+    .trending{
+        padding: 0;
+    }
+    .pick{
+        display: grid;
+        grid-gap: 16px;
+        grid-template-columns: repeat(auto-fill, minmax(200px,1fr));
+    }
+    .trendingBtx{
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    }
+}
+@media(max-width:458px){
+    .search_bx{
+        display: none;
+    }
+    .header{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .btn_bx{
+        visibility: visible;
+    }
 }

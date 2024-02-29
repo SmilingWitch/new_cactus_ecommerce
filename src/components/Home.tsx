@@ -12,7 +12,7 @@ import Link from "next/link"
 export default function Home(){
     return(
         <div className={style.cont}>
-            <div className={style.bx}>
+            <div className="bx">
 
             <div className={style.front_page}>
                 <div className={style.header}>
@@ -37,11 +37,15 @@ export default function Home(){
                         </div>
 
                     </div>
+                    <div className={`${style.btn} ${style.btn_bx}`}>
+                        <button>Shop now</button>
+
+                    </div>
                 </div>
                 
                 <div className={style.front_img_bx}>
-                    <Image 
-                        src="/images/junior-rodriguez-gsCecg8nrAY-unsplash.jpg"  
+                    <Image className={style.img}
+                        src="/images/annie-spratt-fbAnIjhrOL4-unsplash.jpg"  
                         layout="fill"
                         objectFit="cover"
                         alt = "Description"></Image>
@@ -87,8 +91,6 @@ export default function Home(){
                                 <span>0</span>
                             </div>
                         </div>
-                        
-
                     </div>
                 </div>
                 <div className={style.trending}>
@@ -136,8 +138,8 @@ export default function Home(){
          
 
             <div className={style.blog}>
-                <div className={style.bx}>
-                    <h2>Visit our blog</h2>
+                <div className="bx">
+                    <h2 className={style.header_bx}>Visit our blog</h2>
                     <div className={style.blog_card_bx}>
                         <BlogCard url="/images/conjunto_minimalista_de_macetas_para_plantas_si(7).jpg" header="5 Tips for Healthy Succulents" secundary_header="Learn how to care for your succulents and keep them thriving"/>
                         <BlogCard url="/images/conjunto_minimalista_de_macetas_para_plantas_si(2).jpg" header="5 Tips for Healthy Succulents" secundary_header="Learn how to care for your succulents and keep them thriving"/>

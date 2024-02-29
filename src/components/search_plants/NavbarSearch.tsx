@@ -21,9 +21,9 @@ export default function NavbarSearch(props: React.PropsWithChildren<MyComponentP
                 <div className={style.logo}>
                     <Link href="/home">
                         <Image src = "/images/[removal.ai]_db996c9f-aad7-4611-8d6b-c706cacb0c28-screenshot-2024-02-25-200736.png"
-                            width={90}
-                            height={60}
-                            alt="Description"/>
+                            layout="fill"
+                            objectFit="cover"
+                            alt = "Description"/>
                     </Link>
                     
                 </div>

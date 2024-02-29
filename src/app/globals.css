@@ -137,3 +137,9 @@ a {
     color-scheme: dark;
   }
 }
+@media(max-width: 1020px){
+  .bx{
+    width: 90%;
+    
+  }
+}

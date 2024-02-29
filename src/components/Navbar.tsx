@@ -11,9 +11,9 @@ export default function Navbar(){
             <div className={style.first}>
                 <div className={style.logo}>
                     <Image src = "/images/[removal.ai]_db996c9f-aad7-4611-8d6b-c706cacb0c28-screenshot-2024-02-25-200736.png"
-                            width={90}
-                            height={60}
-                            alt="Description"></Image>
+                            layout="fill"
+                            objectFit="cover"
+                            alt = "Description"></Image>
                 </div>
                 <div className={style.headers}>
                     <Link className={style.link}  href = "/home">Home</Link>
