@@ -16,7 +16,7 @@
     width: 600px;
     height: 20vh;
     min-height: 300px;
-    margin-top: 15vh;  
+    /*margin-top: 15vh; */ 
 }
 .header h1{
     font-family: "PoppinsBolder";
@@ -322,7 +322,7 @@
         position: absolute;
         z-index: -1;
         width: 100%;
-        height: 90%;
+        height: 80vh;
         border-radius: var(--border-radius);
         display: flex;
         align-items: flex-start;
@@ -331,8 +331,8 @@
         position: relative;
     }
     .header{
-        margin-bottom: 45dvh;
         width: 90%;
+        height: 80%;
     }
     .header h1{
         font-size: calc(1.2em + 2.5vw);
@@ -346,7 +346,7 @@
 }
 @media(max-width:807px){
     .offets_bx{
-        min-height: calc(100dvh - 80px);
+        min-height: calc(100vh - 80px);
         margin-top: 10vh;
         display: flex;
         flex-direction: column;
