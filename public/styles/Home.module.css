@@ -9,12 +9,13 @@
     display: flex;
     align-items: center;
     justify-content: space-around;
+    
 }
 .header{
     position: relative;
     width: 600px;
     height: 20vh;
-    height: 300px;   
+    min-height: 300px;  
 }
 .header h1{
     font-family: "PoppinsBolder";
