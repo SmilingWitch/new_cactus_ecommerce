@@ -5,7 +5,7 @@
 .front_page{
     position: relative;
     width: 100%;
-    height: calc(100dvh - 80px);
+    height: calc(100vh - 80px);
     display: flex;
     align-items: center;
     justify-content: space-around;
@@ -16,7 +16,7 @@
     width: 600px;
     height: 20vh;
     min-height: 300px;
-    margin-top: 15dvh;  
+    margin-top: 15vh;  
 }
 .header h1{
     font-family: "PoppinsBolder";
