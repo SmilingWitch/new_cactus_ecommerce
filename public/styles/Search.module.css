@@ -74,13 +74,13 @@
 }
 .offer{
     position: relative;
-    width: 300px;
+    width: 250px;
     height:85px;
     background: var(--colorResalt);
     border-radius: var(--border-radius);
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
     
     overflow: hidden;
 }
@@ -98,14 +98,16 @@
 .desc{
     position: absolute;
     font-family: "PoppinsBolder";
-    right: 28px;
+    right: 30px;
 }
 .text{
     position: relative;
+    background: rebeccapurple;
 }
 .text p{
     position: relative;
     color: whitesmoke;
+    font-size: 0.8em;
 }
 
 
@@ -114,7 +116,7 @@
     position: relative;
     width: 100%;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: space-between;
     padding-top: 50px;
 }
@@ -125,6 +127,7 @@
     position: relative;
     display: flex;
     flex-direction: column;
+    width: 70%;
 }
 .result span:nth-child(1){
     position: relative;
@@ -138,8 +141,12 @@
 }
 .categories_bx{
     position: relative;
-    display: flex;
+    /*display: flex;*/
+    display: grid;
+    grid-gap: 16px;
+    grid-template-columns: repeat(auto-fill, minmax(80px,1fr));
     margin-top: 16px;
+    width: 100%;
 }
 .categories{
     position: relative;
@@ -147,7 +154,7 @@
     padding-left: 10px;
     padding-right: 10px;
     border-radius: var(--border-radius);
-    margin-right: 16px;
+    /*margin-right: 16px;*/
     border: 1px solid var(--greySpace);
     background: transparent;
     display: flex;
@@ -169,6 +176,8 @@
     position: relative;
     display: flex;
     align-items: center;
+    height: 100%;
+    
 }
 .input_bx{
     position: relative;
@@ -178,7 +187,7 @@
     position: relative;
     width: 100px;
     background: var(--greySpace);
-    height: calc(1.5rem + 2vh);
+    height: calc(1.5rem + 1vh);
     border-radius: var(--border-radius);
     overflow: hidden;
     display: flex;
@@ -218,6 +227,17 @@
     width: 100%;
     display: grid;
     grid-gap: 16px;
-    grid-template-columns: repeat(auto-fill, minmax(180px,1fr));
+    grid-template-columns: repeat(auto-fill, minmax(150px,1fr));
     margin-top: 20px;
+}
+@media(max-width:608px){
+    .search{
+        flex-direction: column;
+    }
+    .filter{
+        margin-top: 16px;
+    }
+    .result{
+        width: 100%;
+    }
 }
