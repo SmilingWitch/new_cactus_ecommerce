@@ -60,13 +60,9 @@ export default function Details(){
                 </div>
 
                 <div className={style.similiar}>
-                    <div className={style.header}>
-                        <div className={style.back} >
+                    <div className={style.header_similar}>
                             <span>Similar Products</span>
-                        </div>
                     </div>
-                    
-                </div>
                     <div className={style.images_bx}>
                         <ProductCardSearch url ="/images/britta-preusse-p7KKwjP3s68-unsplash.jpg" 
                                             price = {15} amount={1} url_redirect = "/dd"/>
@@ -76,11 +72,10 @@ export default function Details(){
                                             price = {15} amount={1} url_redirect = "/dd"/>
                         <ProductCardSearch url ="/images/britta-preusse-p7KKwjP3s68-unsplash.jpg" 
                                             price = {15} amount={1} url_redirect = "/dd"/>
-                        <ProductCardSearch url ="/images/andrea-rico-Npfkyf94cik-unsplash.jpg" 
-                                            price = {15} amount={1} url_redirect = "/dd"/>
-                        <ProductCardSearch url ="/images/stephanie-harvey-T0inbt7nRME-unsplash.jpg" 
-                                            price = {15} amount={1} url_redirect = "/dd"/>
                     </div>
+                    
+                </div>
+                    
 
                 </div>
                     

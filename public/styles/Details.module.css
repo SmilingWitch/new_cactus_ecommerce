@@ -57,11 +57,9 @@
 }
 .images_bx{
     position: relative;
-    height: 100%;
     display: grid;
     grid-gap: 16px;
-    grid-template-columns: repeat(auto-fill, minmax(150px,1fr));
-    margin-top: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(150px,1fr));
 }
 .details_bx{
     position: relative;
@@ -126,6 +124,20 @@
     font-size: 0.8em;
     color: rgb(218, 185, 3);
 }
+.similiar{
+    position: relative;
+    top: 40px;
+}
+.header_similar{
+    position: relative;
+    margin-bottom: 16px;
+}
+.header_similar span{
+    position: relative;
+    font-family: "PoppinsBolder";
+    font-size: 20px;
+}
+
 
 @media(max-width:804px){
     .gallery{
