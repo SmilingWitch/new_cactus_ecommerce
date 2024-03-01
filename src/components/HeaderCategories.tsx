@@ -41,7 +41,7 @@ export default function HeaderCategories(props: React.PropsWithChildren<MyCompon
                             </div>
                         </div>
 
-                        <div className={style.offer}>
+                        {/*<div className={style.offer}>
                             <div className={style.image_bx}>
                                 <Image src="/images/[removal.ai]_868dacbe-e22b-4b20-923f-7215d01b7759-screenshot-2024-02-26-115344.png"
                                 layout="fill"
@@ -56,7 +56,7 @@ export default function HeaderCategories(props: React.PropsWithChildren<MyCompon
                             <div className={style.text}>
                                <p>On all succulent pots after 9 PM every day!</p> 
                             </div>
-                         </div>
+                         </div>*/}
                     </div>
                     
                 </div>
