@@ -317,12 +317,17 @@
     }
 }
 @media(max-width:899px){
-    
+    .front_page{
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        margin-top: 30px;
+    }
     .front_img_bx{
         position: absolute;
         z-index: -1;
         width: 100%;
-        height: 80vh;
+        height: 70vh;
         border-radius: var(--border-radius);
         display: flex;
         align-items: flex-start;
@@ -332,7 +337,8 @@
     }
     .header{
         width: 90%;
-        height: 80%;
+        height: 60vh;
+        padding-top: 5vh;
     }
     .header h1{
         font-size: calc(1.2em + 2.5vw);
@@ -388,5 +394,8 @@
     }
     .btn_bx{
         visibility: visible;
+    }
+    .header h3{
+        font-size: 0.8em;
     }
 }
