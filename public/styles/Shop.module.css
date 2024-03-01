@@ -14,7 +14,7 @@
     width: 100%;
     display: grid;
     grid-gap: 16px;
-    grid-template-columns: repeat(auto-fill, minmax(180px,1fr));
+    grid-template-columns: repeat(auto-fill, minmax(150px,1fr));
     margin-top: 20px;
 }
 .filter{
@@ -34,7 +34,7 @@
     position: relative;
     width: 100px;
     background: var(--greySpace);
-    height: calc(1.5rem + 2vh);
+    height: calc(1.5rem + 1vh);
     border-radius: var(--border-radius);
     overflow: hidden;
     display: flex;
