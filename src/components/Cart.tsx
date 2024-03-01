@@ -5,10 +5,19 @@ import HeaderCategories from "./HeaderCategories"
 export default function Cart(){
     return(
         <div className={style.cont}>
+            
             <div className={style.header}>
                 <HeaderCategories url = "/images/icons8-cart-80.png" header = "My Cart"/>
-            </div>
+            </div>            
             <div className="bx">
+                <div className={style.tota_product_card}>
+                    <div className={style.header_card}>
+                        <span>Estimated total(10 items):</span> 
+                        <span>$ 100.00</span>
+                    </div>
+                    <div className={style.btn}><button>Checkout (10)</button></div>
+                </div>
+                <div className={style.items}>Items(10)</div>
                 <div className={style.cart}>
                     <div className={style.card_bx}>
                         <CartCard/>
@@ -22,12 +31,9 @@ export default function Cart(){
                         <CartCard/>
                         <CartCard/>
                     </div>
-
-                    <div className={style.tota_product_card}>
-
-                    </div>
                     
                 </div>
+                
 
             </div>
 

@@ -22,14 +22,18 @@ export default function CartCard(){
             
             <div className={style.bx}>
                 <div className={style.qty_info}>
+                    <div className={style.btn}>
+                        <FaTrashCan className={style.icon}/>
+                    </div>
                     <div className={style.qty}>
-                        <div className={style.qty_bx}>
+                        {/*<div className={style.qty_bx}>
                             <span>Quantity: </span>
                             <span>1</span>
-                        </div>
+                        </div>*/}
                         <div className={style.btn_bx}>
-                            <span><FaMinus/></span>
-                            <span><FaPlus/></span>
+                            <span className={style.icon_qty}><FaMinus/></span>
+                            <span>1</span>
+                            <span className={style.icon_qty}><FaPlus/></span>
                         </div>
                     </div>
                     {/*<div className={style.totalP}>
@@ -37,9 +41,7 @@ export default function CartCard(){
                          <span>$ 5.00</span>   
                 </div>*/}
 
-                    <div className={style.btn}>
-                    <FaTrashCan className={style.icon}/>
-                </div>
+                    
                 </div>
                 
             </div>

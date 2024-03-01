@@ -2,13 +2,13 @@
     position: relative;
     width: 100%;
     padding: 15px;
-    height: 150px;
-    border: 1px solid rgba(169, 167, 167, 0.4);
-    border-radius: var(--border-radius);
+    padding-left: 0;
+    padding-right: 0;
+    height: 120px;
+    border-top: 1px solid rgba(169, 167, 167, 0.4);
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-bottom: 16px;
 }
 
 .image_bx{
@@ -28,11 +28,19 @@
 .info{
     position: relative;
     margin-left: 30px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
 }
 .name{
     position: relative;
-    font-size: 20px;
-    margin-bottom: 16px;
+    font-size: 16px;
+
+}
+.price{
+    font-size: 0.8em;
 }
 
 .bx{
@@ -46,31 +54,40 @@
 .qty_info{
     position: relative;
     width: 100%;
+    height: 100%;
     display: flex;
     flex-direction: column;
     align-items: flex-end;
-    justify-content: center;
+    justify-content: space-around;
 }
 .qty{
     position: relative;
     display: flex;
-    margin-bottom: 16px;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid rgba(169, 167, 167, 0.4);
+    background: var(--greySpace);
+    border-radius: var(--border-radius);
+}
+.qty_bx span{
+    font-size: 0.8em;
 }
 .btn_bx{
     position: relative;
-    margin-left: 30px;
     display: flex;
 }
 .btn_bx span{
     position: relative;
-    cursor: pointer;
-    margin-left: 5px;
     padding: 5px;
     display: flex;
     align-items: center;
     justify-content: center;
     border-radius: var(--border-radius);
     transition: 0.3s;
+    font-size: 0.8em;
+}
+.icon_qty{
+    cursor: pointer;
 }
 .btn_bx span:hover{
     background: var(--greySpace);;
@@ -83,4 +100,14 @@
 }
 .icon{
     cursor: pointer;
+    font-size: 0.8em;
+}
+@media(max-width:417px){
+    .info{
+        margin-left: 16px;
+    }
+    .qty{
+        flex-direction: column;
+    }
+
 }

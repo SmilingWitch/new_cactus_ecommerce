@@ -1,28 +1,87 @@
 .cont{
     position: relative;
     width: 100%;
-    min-height: calc(100dvh - 80px);
+    min-height: calc(200dvh - 80px);
 }
 .cart{
     position: relative;
     width: 100%;
-    display: grid;
+    /*display: grid;
     grid-gap: 20px;
-    grid-template-columns: 2fr 1fr;
-    padding-top: 50px;
+    grid-template-columns: 2fr 1fr;*/
+    display: flex;
+    justify-content: space-between;
 }
-.tota_product_card{
-    position: static;
+.card_bx{
+
     width: 100%;
-    height: 200px;
-    border-radius: var(--border-radius);
-    background: var(--greySpace);
-    border: 1px solid rgba(169, 167, 167, 0.4);
-    transition: 0.5s;
 }
 .header{
     position: relative;
     width: 100%;
     background: var(--greySpace);
     height: 20dvh;
+}
+.items{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding-top: 16px;
+    padding-bottom: 5px;
+    font-size: 0.8em;
+}
+
+.tota_product_card{
+    position: relative;
+    transition: 0.5s;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-top: 30px;
+}
+.header_card{
+    position: relative;
+    display:flex ;
+    align-items: center;
+    justify-content: flex-start;   
+}
+.header_card span{
+    font-family: "PoppinsBolder";
+    font-size: 0.8em;
+}
+.header_card span:nth-child(1){
+    padding-right: 5px;
+}
+.btn{
+    position: relative;
+    height: 30px;
+    margin-left: 16px;
+}
+.btn button{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: var(--border-radius);
+    background: var(--colorResalt);
+    border: none;
+    color: whitesmoke;
+    font-size: 0.8em;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.btn button:hover{
+    background:rgb(53, 96, 53) ;
+}
+@media(max-width:417px){
+    .tota_product_card{
+        flex-direction: column;
+        align-items: center;
+    }
+    .btn{
+        margin-left: 0;
+        margin-top: 10px;
+    }
+
 }
