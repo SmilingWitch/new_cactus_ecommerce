@@ -1,4 +1,5 @@
 "use client"
+import Contact from "@/components/Contact";
 import SideBar from "@/components/SideBar";
 import NavbarSearch from "@/components/search_plants/NavbarSearch";
 import {useState} from "react"
@@ -19,6 +20,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
        <SideBar visible = {visible} setVisible={setVisible} />
        <NavbarSearch setVisible={setVisible}/>
       <main >{children}</main>
+      <Contact/>
   
     </>
   );

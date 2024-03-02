@@ -33,7 +33,7 @@ export default function Navbar(){
                     <Link href = "/cart"><FaBasketShopping/></Link> 
                 </div>
                 <div className={style.icon}>
-                    <FaUser/>
+                <Link href = "/account/register"><FaUser/></Link> 
                 </div>
                 
             </div>

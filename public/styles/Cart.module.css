@@ -1,7 +1,8 @@
 .cont{
     position: relative;
     width: 100%;
-    min-height: calc(200dvh - 80px);
+    min-height: calc(100vh - 80px);
+    padding-bottom: 5vh;
 }
 .cart{
     position: relative;

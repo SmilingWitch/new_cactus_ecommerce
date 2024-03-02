@@ -20,23 +20,6 @@ export default function Home(){
                         <h1>Explore a variety of cactus and succulents for your collection</h1>
                         <h3>Browse by type, size, or featured items!</h3>
                     </div>
-                    
-
-                    <div className={style.search_bx}>
-                        <div className={style.input_bx}>
-                            <input type="text" name="" id="" placeholder="What plant are you searching for?" />
-                            <Link href="/search">
-                                <div className={style.icon_bx}><GoSearch className={style.icon}/>
-                                </div>
-                            </Link>
-                        </div>
-                        <div className={style.btn}>
-                        <Link href="/search">
-                            <button>Search</button>
-                        </Link>
-                        </div>
-
-                    </div>
                     <div className={`${style.btn} ${style.btn_bx}`}>
                         <button>Shop now</button>
 

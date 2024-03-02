@@ -6,7 +6,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    border-bottom: 2px solid rgba(142, 140, 140,0.5);
+    border-bottom: 1px solid rgba(142, 140, 140,0.3);
 }
 .first{
     position: relative;

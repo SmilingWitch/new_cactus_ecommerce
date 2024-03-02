@@ -5,6 +5,7 @@ import NavbarSearch from "@/components/search_plants/NavbarSearch";
 import {useState} from "react"
 import  { ReactNode } from "react";
 import useMediaQuery from '../../components/function/MediaQuery';
+import Contact from "@/components/Contact";
 
 interface RootLayoutProps {
   children: ReactNode; // Define el tipo de children
@@ -19,11 +20,8 @@ export default function RootLayout({ children }: RootLayoutProps) {
    <>
    <SideBar visible = {visible} setVisible={setVisible} />
     {isMobile ? <NavbarSearch setVisible={setVisible}/> : <Navbar/>}
-      
-      
-      
      <main >{children}</main>
- 
+     <Contact/>
    </>
  );
 }

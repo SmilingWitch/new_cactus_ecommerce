@@ -1,5 +1,6 @@
 "use client"
 
+import Contact from "@/components/Contact";
 import SideBar from "@/components/SideBar";
 import NavbarSearch from "@/components/search_plants/NavbarSearch";
 import {useState} from "react"
@@ -21,6 +22,7 @@ const [visible, setVisible] = useState(false)
       <SideBar visible = {visible} setVisible={setVisible} />
       <NavbarSearch setVisible={setVisible}/>
      <main >{children}</main>
+     <Contact/>
  
    </>
  );

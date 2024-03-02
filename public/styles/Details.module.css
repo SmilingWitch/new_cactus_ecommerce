@@ -1,6 +1,7 @@
 .cont{
     position: relative;
     min-height: calc(100dvh - 80px);
+    padding-bottom: 5vh;
 }
 .header{
     position: relative;
@@ -126,7 +127,7 @@
 }
 .similiar{
     position: relative;
-    top: 40px;
+    margin-top: 40px;
 }
 .header_similar{
     position: relative;
