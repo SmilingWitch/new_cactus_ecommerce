@@ -1,6 +1,7 @@
 .cont{
     position: relative;
     width: 100%;
+
 }
 .front_page{
     position: relative;
@@ -16,15 +17,24 @@
     width: 600px;
     height: 20vh;
     min-height: 300px;
-    /*margin-top: 15vh; */ 
+
+}
+.h1{
+    position: relative;
+    display: flex;
 }
 .header h1{
-    font-family: "PoppinsBolder";
-    font-size: calc(1.2em + 1vw);
+    font-family: "ArAndCo";
+    font-size: calc(8em + 1vw);
+    /*font-size: 100px;*/
+    text-transform: uppercase;
+}
+.header h1:nth-child(2){
+    color: var(--colorResalt);
 }
 .header h3{
     position: relative;
-    margin-top: calc(16px + 1vw);
+    font-size: 0.8em;
     color: var(--secundary_header);
 }
 .search_bx{
@@ -99,13 +109,9 @@
 }
 .front_img_bx{
     position: relative;
-    height: 300px;
+    height: 400px;
     width: 200px;
     overflow: hidden;
-    border-top-left-radius: 8px;
-    border-top-right-radius: 80px;
-    border-bottom-left-radius: 80px;
-    border-bottom-right-radius: 80px;
 }
 
 
@@ -319,35 +325,35 @@
 @media(max-width:899px){
     .front_page{
         display: flex;
+        flex-direction: column;
         align-items: flex-start;
         justify-content: center;
         margin-top: 30px;
     }
+
     .front_img_bx{
-        position: absolute;
-        z-index: -1;
-        width: 100%;
-        height: 70vh;
-        border-radius: var(--border-radius);
-        display: flex;
-        align-items: flex-start;
-    }
-    .img{
-        position: relative;
+        margin: 0 auto;
+        width: 200px;
+        height: 250px;
+
     }
     .header{
         width: 90%;
-        height: 60vh;
         padding-top: 5vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 0 auto;
     }
     .header h1{
-        font-size: calc(1.2em + 2.5vw);
+        font-size: calc(1.2em + 20vw);
         text-align: center;
     }
     .header h3{
-        font-size: 1em;
+        /*font-size: 1em;*/
         text-align: center;
     }
+    
     
 }
 @media(max-width:807px){
@@ -392,9 +398,7 @@
         flex-direction: column;
         align-items: center;
     }
-    .btn_bx{
-        visibility: visible;
-    }
+
     .header h3{
         font-size: 0.8em;
     }
