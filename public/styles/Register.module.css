@@ -1,0 +1,131 @@
+/*-------------NAVBAR-------------*/
+.navbar{
+    position: absolute;
+    z-index: 1000000;
+    border-bottom: 1px solid rgba(142, 140, 140,0.3);
+    width: 100%;
+    padding-bottom: 15px;
+    width: 1000px;
+    margin: 0 auto;
+}
+
+.cont{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background: whitesmoke;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.form{
+    position: relative;
+    min-height: 100px;
+    width: 400px;
+    background: white;
+    border-radius: var(--border-radius);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.form form{
+    margin-top: 20px;
+    width: 100%;
+}
+.image_bx{
+    position: relative;
+    width: 80px;
+    height: 60px;
+}
+.logo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.logo_name h1{
+    font-size: 25px;
+    font-family: "PoppinsBolder";
+}
+
+.input_bx{
+    position: relative;
+    width: 100%;
+    height: 40px;
+    margin-bottom: 16px;
+    border-radius: var(--border-radius);
+}
+.input_bx input{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    border-radius: var(--border-radius);
+    border: 1px solid rgba(142, 140, 140,0.3);
+    outline: none;
+    color: var(--font_color);
+    font-size: 0.8em;
+    padding-left: 10px;
+    padding-right: 10px;
+
+}
+.input_bx input:focus {
+    border: 1px solid var(--colorResalt);
+}
+.requirement{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    font-size: 0.7em;
+    width: 100%;
+}
+.btn{
+    position: relative;
+    height: calc(1.5rem + 2vh);
+    margin-top: 4px;
+    width: 100%;
+}
+.btn button{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: var(--border-radius);
+    background: var(--colorResalt);
+    border: none;
+    color: whitesmoke;
+    font-size: 0.8em;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.btn button:hover{
+    background:rgb(53, 96, 53) ;
+}
+.account{
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 20px;
+    font-size: 0.8em;
+}
+.log,.forgot{
+    text-transform: uppercase;
+    color: var(--colorResalt);
+    font-family: "PoppinsBolder";
+}
+.forgot{
+    font-size: 0.8em;
+    margin-top: 20px;
+}
+
+@media(max-width: 430px){
+    .form{
+        width: 90%;
+    }
+}
