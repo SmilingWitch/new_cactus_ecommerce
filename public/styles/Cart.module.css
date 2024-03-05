@@ -21,7 +21,7 @@
     position: relative;
     width: 100%;
     background: var(--greySpace);
-    height: 20dvh;
+    height: 20vh;
 }
 .items{
     position: relative;

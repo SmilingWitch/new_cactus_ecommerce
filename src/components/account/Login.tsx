@@ -9,7 +9,6 @@ export default function Login(){
             <div className={style.form}>
                 <div className={style.logo}>
                     <div className={style.logo_name}><h1>Log in</h1>{/*Cactus Haven*/}</div>
-
                 </div>
                 
                 <form action="">

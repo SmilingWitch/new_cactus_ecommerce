@@ -19,7 +19,7 @@ export default function Contact(){
             </div>
             <div className={style.info}>
                 <div className={style.qw}>Questions?</div>
-                <div className={style.slogan_info}>We're here for you 24/7 </div>
+                <div className={style.slogan_info}>We&apos;re here for you 24/7</div>
                 <div className={style.contact_bx}>
                     <div className={style.contact}><MdPhone className={style.info_contact}/><span>Contact us at <span className={style.number}>(+123) 000 111 222 333</span></span></div>
                     <div className={style.contact}><MdEmail className={style.info_contact}/><span className={style.email}>hello@cactuscraze.com</span></div>
