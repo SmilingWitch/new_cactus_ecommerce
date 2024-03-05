@@ -12,26 +12,33 @@ import Link from "next/link"
 export default function Home(){
     return(
         <div className={style.cont}>
+
             <div className="bx">
 
             <div className={style.front_page}>
                 <div className={style.header}>
                     <div>
-                        <h1>Explore a variety of cactus and succulents for your collection</h1>
-                        <h3>Browse by type, size, or featured items!</h3>
+                        <div className={style.h1}>
+                        <h1>Cactus</h1>
+                        </div>
+                        
+                        <h3>- Explore a variety of cactus and succulents for your collection -</h3>
                     </div>
                     <div className={`${style.btn} ${style.btn_bx}`}>
-                        <button>Shop now</button>
+                        <Link href="/shop"><button>Shop now</button></Link>
 
                     </div>
                 </div>
                 
                 <div className={style.front_img_bx}>
                     <Image className={style.img}
-                        src="/images/annie-spratt-fbAnIjhrOL4-unsplash.jpg"  
+                        src="/images/[removal.ai]_a06cb36c-06c2-460c-a2f8-6caec78cab8e-golden-barrel-artificial-cactus-in-contemporary-stone-pot-19-cm-tall.png"  
                         layout="fill"
                         objectFit="cover"
                         alt = "Description"></Image>
+                        <div className={style.circle}>
+
+                        </div>
                 </div>
             </div>
 
