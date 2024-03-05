@@ -10,6 +10,10 @@
   font-family: "PoppinsBolder";
   src: url("../../public/fonts/Poppins-Bold.ttf");
 }
+@font-face {
+  font-family: "ArAndCo";
+  src: url("../../public/fonts/Mallnote.ttf");
+}
 
 
 :root {
