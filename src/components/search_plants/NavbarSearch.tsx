@@ -40,7 +40,7 @@ export default function NavbarSearch(props: React.PropsWithChildren<MyComponentP
                    <Link href="/cart"><FaBasketShopping/></Link> 
                 </div>
                 <div className={style.icon}>
-                    <FaUser/>
+                    <Link href = "/account/register"><FaUser/></Link>
                 </div>
                 <div className={style.icon} onClick={() => props.setVisible(true)}>
                     <TiThMenu/>
