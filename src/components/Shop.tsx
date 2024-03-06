@@ -1,14 +1,29 @@
 "use client"
 import style from "../../public/styles/Shop.module.css"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import HeaderCategories from "./HeaderCategories"
 import ProductCardSearch from "./search_plants/ProductCardSearch"
 import { IoIosArrowDown } from "react-icons/io";
+import axios from "axios"
 
 export default function Shop(){
+
+    // variable
+    let allFromsessionStorage = [];
+    if (typeof window !== 'undefined') {
+    const item = sessionStorage.getItem('all_categories');
+    if (item !== null) {
+        allFromsessionStorage = JSON.parse(item) || [];
+    }
+}
+
+
+    // states
     const [visible,setVisible] = useState(false)
     const options = ["Price", "Date", "Popular"]
     const [selectedOption, setSelectedOption] = useState("Date");
+    const [res, SetRes] = useState(allFromsessionStorage)
+    const [isMounted, setIsMounted] = useState(false);
 
     const [formValue, setFormValue] = useState({
         type: "Date" 
@@ -23,6 +38,70 @@ export default function Shop(){
     };
 
 
+    useEffect(() => {
+        setIsMounted(true); 
+        all()
+      }, []);
+
+
+
+    const all = async () =>{
+
+
+        try {
+            const response = await axios.get('https://cactusshopi.onrender.com/plants/plant/');
+            /*SetRes(response.data)*/
+            console.log(response.data)
+
+            const item = sessionStorage.getItem('all_categories');
+            SetRes(item ? JSON.parse(item) : null);
+
+            // Obtén los datos del almacenamiento local
+            let codigossessionStorage:any = [];
+            const item2 = sessionStorage.getItem('all_categories');
+            if (item2 !== null) {
+                codigossessionStorage = JSON.parse(item2);
+            }
+
+
+            // Obtén los datos de la respuesta de la petición
+            let codigosResponse = response.data;
+
+            // Para cada elemento en los datos de la respuesta de la petición
+            codigosResponse.forEach((codigoResponse : any) => {
+            // Verifica si el elemento ya existe en el almacenamiento local
+            let existeEnsessionStorage = codigossessionStorage.some((codigosessionStorage : any) => codigosessionStorage.id === codigoResponse.id);
+            
+            // Si el elemento no existe en el almacenamiento local, agrégalo
+            if (!existeEnsessionStorage) {
+                codigossessionStorage.push(codigoResponse);
+            }
+            });
+
+            // Para cada elemento en el almacenamiento local
+            codigossessionStorage.forEach((codigosessionStorage: any, index: any) => {
+               // Verifica si el elemento existe en los datos de la respuesta de la petición
+               let existeEnResponse = codigosResponse.some((codigoResponse : any) => codigoResponse.id === codigosessionStorage.id);
+            
+               // Si el elemento no existe en los datos de la respuesta de la petición, elimínalo del almacenamiento local
+               if (!existeEnResponse) {
+                   codigossessionStorage.splice(index, 1);
+               }
+            });
+
+            // Guarda los datos actualizados en el almacenamiento local
+            sessionStorage.setItem('all_categories', JSON.stringify(codigossessionStorage));
+            SetRes(codigossessionStorage);
+
+           } catch(error) {
+            console.log(error);
+           }    
+     }
+
+
+     if (!isMounted) {
+        return null; // Or some placeholder content
+       }
 
 
 
@@ -59,15 +138,11 @@ export default function Shop(){
           </div>
           <div className="bx">
             <div className={style.plats_bx}>
-                <ProductCardSearch  url = "/images/conjunto_minimalista_de_macetas_para_plantas_si(3).jpg" price= {5.00} amount = {1} url_redirect= "/shop/1"/>
-                <ProductCardSearch  url = "/images/conjunto_minimalista_de_macetas_para_plantas_si(3).jpg" price= {5.00} amount = {1} url_redirect= "/shop/1"/>
-                <ProductCardSearch  url = "/images/conjunto_minimalista_de_macetas_para_plantas_si(3).jpg" price= {5.00} amount = {1} url_redirect= "/shop/1"/>
-                <ProductCardSearch  url = "/images/conjunto_minimalista_de_macetas_para_plantas_si(3).jpg" price= {5.00} amount = {1} url_redirect= "/shop/1"/>
-                <ProductCardSearch  url = "/images/conjunto_minimalista_de_macetas_para_plantas_si(3).jpg" price= {5.00} amount = {1} url_redirect= "/shop/1"/>
-                <ProductCardSearch  url = "/images/conjunto_minimalista_de_macetas_para_plantas_si(3).jpg" price= {5.00} amount = {1} url_redirect= "/shop/1"/>
-                <ProductCardSearch  url = "/images/conjunto_minimalista_de_macetas_para_plantas_si(3).jpg" price= {5.00} amount = {1} url_redirect= "/shop/1"/>
-                <ProductCardSearch  url = "/images/conjunto_minimalista_de_macetas_para_plantas_si(3).jpg" price= {5.00} amount = {1} url_redirect= "/shop/1"/>
-                <ProductCardSearch  url = "/images/conjunto_minimalista_de_macetas_para_plantas_si(3).jpg" price= {5.00} amount = {1} url_redirect= "/shop/1"/>            
+            {res.map((item: any) => {
+                    return <ProductCardSearch key = {item.id} url = {item.image} price= {item.cost} amount = {1} url_redirect= {`/shop/${item.id}`} name = {item.name}/>
+            })}
+               
+         
             </div>
 
           </div>
