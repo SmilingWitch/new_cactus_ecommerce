@@ -84,15 +84,15 @@ export default function PlantCategories(){
           </div>
 
           <div className={style.plats_bx}>
-              <ProductCardSearch  url = "/images/conjunto_minimalista_de_macetas_para_plantas_si(3).jpg" price= {5.00} amount = {1} url_redirect= {`/categories/plants/${category}/1`}/>
-              <ProductCardSearch  url = "/images/conjunto_minimalista_de_macetas_para_plantas_si(3).jpg" price= {5.00} amount = {1} url_redirect= {`/categories/plants/${category}/1`}/>
-              <ProductCardSearch  url = "/images/conjunto_minimalista_de_macetas_para_plantas_si(3).jpg" price= {5.00} amount = {1} url_redirect= {`/categories/plants/${category}/1`}/>
-              <ProductCardSearch  url = "/images/conjunto_minimalista_de_macetas_para_plantas_si(3).jpg" price= {5.00} amount = {1} url_redirect= {`/categories/plants/${category}/1`}/>
-              <ProductCardSearch  url = "/images/conjunto_minimalista_de_macetas_para_plantas_si(3).jpg" price= {5.00} amount = {1} url_redirect= {`/categories/plants/${category}/1`}/>
-              <ProductCardSearch  url = "/images/conjunto_minimalista_de_macetas_para_plantas_si(3).jpg" price= {5.00} amount = {1} url_redirect= {`/categories/plants/${category}/1`}/>
-              <ProductCardSearch  url = "/images/conjunto_minimalista_de_macetas_para_plantas_si(3).jpg" price= {5.00} amount = {1} url_redirect= {`/categories/plants/${category}/1`}/>
-              <ProductCardSearch  url = "/images/conjunto_minimalista_de_macetas_para_plantas_si(3).jpg" price= {5.00} amount = {1} url_redirect= {`/categories/plants/${category}/1`}/>
-              <ProductCardSearch  url = "/images/conjunto_minimalista_de_macetas_para_plantas_si(3).jpg" price= {5.00} amount = {1} url_redirect= {`/categories/plants/${category}/1`}/>
+              <ProductCardSearch  url = "/images/conjunto_minimalista_de_macetas_para_plantas_si(3).jpg" price= {5.00} amount = {1} url_redirect= {`/categories/plants/${category}/1`} name = "Name"/>
+              <ProductCardSearch  url = "/images/conjunto_minimalista_de_macetas_para_plantas_si(3).jpg" price= {5.00} amount = {1} url_redirect= {`/categories/plants/${category}/1`} name = "Name"/>
+              <ProductCardSearch  url = "/images/conjunto_minimalista_de_macetas_para_plantas_si(3).jpg" price= {5.00} amount = {1} url_redirect= {`/categories/plants/${category}/1`} name = "Name"/>
+              <ProductCardSearch  url = "/images/conjunto_minimalista_de_macetas_para_plantas_si(3).jpg" price= {5.00} amount = {1} url_redirect= {`/categories/plants/${category}/1`} name = "Name"/>
+              <ProductCardSearch  url = "/images/conjunto_minimalista_de_macetas_para_plantas_si(3).jpg" price= {5.00} amount = {1} url_redirect= {`/categories/plants/${category}/1`} name = "Name"/>
+              <ProductCardSearch  url = "/images/conjunto_minimalista_de_macetas_para_plantas_si(3).jpg" price= {5.00} amount = {1} url_redirect= {`/categories/plants/${category}/1`} name = "Name"/>
+              <ProductCardSearch  url = "/images/conjunto_minimalista_de_macetas_para_plantas_si(3).jpg" price= {5.00} amount = {1} url_redirect= {`/categories/plants/${category}/1`} name = "Name"/>
+              <ProductCardSearch  url = "/images/conjunto_minimalista_de_macetas_para_plantas_si(3).jpg" price= {5.00} amount = {1} url_redirect= {`/categories/plants/${category}/1`} name = "Name"/>
+              <ProductCardSearch  url = "/images/conjunto_minimalista_de_macetas_para_plantas_si(3).jpg" price= {5.00} amount = {1} url_redirect= {`/categories/plants/${category}/1`} name = "Name"/>
 
           </div>
   
