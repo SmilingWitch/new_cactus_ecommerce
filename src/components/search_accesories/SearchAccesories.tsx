@@ -2,28 +2,44 @@
 import { useRouter } from 'next/navigation';
 import { useParams } from 'next/navigation'
 import style from "../../../public/styles/Search.module.css"
-
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import HeaderCategories from '../HeaderCategories';
 import { IoIosArrowDown } from "react-icons/io";
 import ProductCardSearch from '../search_plants/ProductCardSearch';
 
 
 export default function SearchAccesories(){
-
-    const validCategories = ["All","Fertilizers", "Planters", "Tools", "Books"];
     const param = useParams()
     const router = useRouter()
     const category = param.categories; // Elimina "/plants/" de la URL
-    console.log("Categoria",category)
     const categoryString = typeof category === 'string' ? category : '';
+
+    //variables
+    let allFromLocalStorage = []
+    let filteredCategory: any  = []
+
+    if(typeof window !== 'undefined'){
+        const item = sessionStorage.getItem('all_categories');
+        if(item !== null){
+            allFromLocalStorage = JSON.parse(item) || []
+            filteredCategory = allFromLocalStorage.filter( (category: any) => category.category !== "Succulents"  &&  category.category !== "Cactus" )
+        }
+    }
+
+
+    const validCategories = ["All","Fertilizers", "Planters", "Tools", "Books"];
     const [visible,setVisible] = useState(false)
     const options = ["Date", "Price", "Popular"]
     const [selectedOption, setSelectedOption] = useState("Date");
-
+    const [isMounted, setIsMounted] = useState(false);
+    const [accesories, SetAccesories] = useState(filteredCategory)
     const [formValue, setFormValue] = useState({
         type: "Date" 
      });
+
+     useEffect(() => {
+        setIsMounted(true); 
+      }, []);
 
     if (!validCategories.includes(categoryString)) {
       // Redirige a una página de error o a otro lugar
@@ -32,17 +48,27 @@ export default function SearchAccesories(){
     }
 
     const handleClick = (option:string) => {
-        
         setFormValue(prevState => ({
             ...prevState,
             type: option
         }));
     };
 
-    const handleCategoryChange = (category:string) => {
-        router.push(`/categories/accesories/${category}`);
-      };
+        
 
+        
+        const handleCategoryChange = (category:string) => {
+            router.push(`/categories/accesories/${category}`);
+            console.log("CATEGORIA", category)
+        };
+
+         
+
+          if (!isMounted) {
+            return null; // Or some placeholder content
+           }
+     
+    
 
     return(
       <div className={style.cont}>
@@ -88,15 +114,17 @@ export default function SearchAccesories(){
           </div>
 
           <div className={style.plats_bx}>
-              <ProductCardSearch  url = "/images/conjunto_minimalista_de_macetas_para_plantas_si(3).jpg" price= {5.00} amount = {1} url_redirect= {`/categories/accesories/${category}/1`}/>
-              <ProductCardSearch  url = "/images/conjunto_minimalista_de_macetas_para_plantas_si(3).jpg" price= {5.00} amount = {1} url_redirect={`/categories/accesories/${category}/2`}/>
-              <ProductCardSearch  url = "/images/conjunto_minimalista_de_macetas_para_plantas_si(3).jpg" price= {5.00} amount = {1} url_redirect={`/categories/accesories/${category}/3`}/>
-              <ProductCardSearch  url = "/images/conjunto_minimalista_de_macetas_para_plantas_si(3).jpg" price= {5.00} amount = {1} url_redirect={`/categories/accesories/${category}/4`}/>
-              <ProductCardSearch  url = "/images/conjunto_minimalista_de_macetas_para_plantas_si(3).jpg" price= {5.00} amount = {1} url_redirect={`/categories/accesories/${category}/5`}/>
-              <ProductCardSearch  url = "/images/conjunto_minimalista_de_macetas_para_plantas_si(3).jpg" price= {5.00} amount = {1} url_redirect={`/categories/accesories/${category}/6`}/>
-              <ProductCardSearch  url = "/images/conjunto_minimalista_de_macetas_para_plantas_si(3).jpg" price= {5.00} amount = {1} url_redirect={`/categories/accesories/${category}/7`}/>
-              <ProductCardSearch  url = "/images/conjunto_minimalista_de_macetas_para_plantas_si(3).jpg" price= {5.00} amount = {1} url_redirect={`/categories/accesories/${category}/8`}/>
-              <ProductCardSearch  url = "/images/conjunto_minimalista_de_macetas_para_plantas_si(3).jpg" price= {5.00} amount = {1} url_redirect={`/categories/accesories/${category}/9`}/>
+            {category === "All" ? 
+            accesories.map((item: any) => {
+                return <ProductCardSearch key={item.id}  url = {item.image} price= {item.cost} amount = {1} url_redirect= {`/categories/accesories/${category}/${item.id}`} name = {item.name}/>
+            })
+            
+            :
+            accesories.filter((accesories: any) => accesories.category === category).map((item: any) => {
+                return <ProductCardSearch key={item.id}   url = {item.image} price= {item.cost} amount = {1} url_redirect= {`/categories/accesories/${category}/${item.id}`} name = {item.name}/>
+            })
+            }
+              
 
           </div>
   
