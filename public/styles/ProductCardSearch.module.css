@@ -19,6 +19,9 @@
 }
 .name{
     position: relative;
+    font-size: 0.8em;
+    margin-top: 5px;
+    
 }
 .info_price{
     font-size: 0.8em;
