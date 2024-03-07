@@ -130,15 +130,20 @@
     flex-direction: column;
     width: 70%;
 }
+
 .result span:nth-child(1){
     position: relative;
     font-size: 20px;
     font-family: "PoppinsBolder";
 }
+
 .result span:nth-child(2),.sort{
     position: relative;
-    font-size: 0.8em;
-    
+    font-size: 0.8em;   
+}
+.span{
+    position: relative;
+    font-size: 0.8em !important;
 }
 .categories_bx{
     position: relative;
