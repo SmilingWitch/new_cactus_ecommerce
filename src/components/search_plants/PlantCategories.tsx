@@ -3,32 +3,48 @@ import { useRouter } from 'next/navigation';
 import { useParams } from 'next/navigation'
 import style from "../../../public/styles/Search.module.css"
 import ProductCardSearch from './ProductCardSearch';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import HeaderCategories from '../HeaderCategories';
 import { IoIosArrowDown } from "react-icons/io";
 
 export default function PlantCategories(){
-    const validCategories = ['All', 'Cactus', 'Succulents'];
+    
     const param = useParams();
     const router = useRouter();
-    const category = param.categories; // Elimina "/plants/" de la URL
-    console.log("Categoria", category);
+    const category = param.categories;
+
+    //variables
+    let allFromLocalStorage = []
+    let filteredCategory: any  = []
+
+    if(typeof window !== 'undefined'){
+        const item = sessionStorage.getItem('all_categories');
+        if(item !== null){
+            allFromLocalStorage = JSON.parse(item) || []
+            console.log("allFromLocalStorage",allFromLocalStorage)
+            filteredCategory = allFromLocalStorage.filter( (category: any) => category.category === "Succulents"  ||  category.category === "Cactus" )
+            console.log("filteredCategory", filteredCategory)
+        
+          }
+    }
+
+
+    const validCategories = ['All', 'Cactus', 'Succulents'];
     const categoryString = typeof category === 'string' ? category : '';
     const [visible, setVisible] = useState(false);
     const options = ["Price", "Date", "Popular"];
+    const [plants, SetPlants] = useState(filteredCategory)
+    const [isMounted, setIsMounted] = useState(false);
     const [selectedOption, setSelectedOption] = useState("Date");
     const [formValue, setFormValue] = useState({
       type: "Date" 
     });
+
+    useEffect(() => {
+      setIsMounted(true); 
+   }, []);
   
-  
-    if (!validCategories.includes(categoryString)) {
-      // Redirige a una página de error o a otro lugar
-      router.replace('/error');
-      return null;
-    }
-  
-    
+
     const handleClick = (option: string) => {
       setFormValue(prevState => ({
         ...prevState,
@@ -40,6 +56,16 @@ export default function PlantCategories(){
       router.push(`/categories/plants/${category}`);
     }
 
+    if (!validCategories.includes(categoryString)) {
+      // Redirige a una página de error o a otro lugar
+      router.replace('/error');
+      return null;
+    }
+
+    if (!isMounted) {
+      return null; // Or some placeholder content
+     }
+
 
     return(
       <div className={style.cont}>
@@ -50,7 +76,13 @@ export default function PlantCategories(){
           <div className={style.search}>
               <div className={style.result}>
                   <span>Search Result for <span className={style.result_search}>{categoryString}</span></span> 
-                  <span>Showing 6 results</span>
+                  <span>Results
+                  {category === "All" ? 
+                    <span className={style.span}>({plants.length})</span>
+                    :
+                    <span className={style.span}>({plants.filter((accesories: any) => accesories.category === category).length})</span>
+                    }
+                    </span>
                   <div className={style.categories_bx}>
                       <div className={categoryString === 'All' ? `${style.categories}  ${style.active}`: `${style.categories} `} onClick={() => handleCategoryChange('All')}>All</div>
                       <div className={categoryString === 'Cactus' ? `${style.categories}  ${style.active}`: `${style.categories} `} onClick={() => handleCategoryChange('Cactus')}>Cactus</div>
@@ -84,15 +116,16 @@ export default function PlantCategories(){
           </div>
 
           <div className={style.plats_bx}>
-              <ProductCardSearch  url = "/images/conjunto_minimalista_de_macetas_para_plantas_si(3).jpg" price= {5.00} amount = {1} url_redirect= {`/categories/plants/${category}/1`} name = "Name"/>
-              <ProductCardSearch  url = "/images/conjunto_minimalista_de_macetas_para_plantas_si(3).jpg" price= {5.00} amount = {1} url_redirect= {`/categories/plants/${category}/1`} name = "Name"/>
-              <ProductCardSearch  url = "/images/conjunto_minimalista_de_macetas_para_plantas_si(3).jpg" price= {5.00} amount = {1} url_redirect= {`/categories/plants/${category}/1`} name = "Name"/>
-              <ProductCardSearch  url = "/images/conjunto_minimalista_de_macetas_para_plantas_si(3).jpg" price= {5.00} amount = {1} url_redirect= {`/categories/plants/${category}/1`} name = "Name"/>
-              <ProductCardSearch  url = "/images/conjunto_minimalista_de_macetas_para_plantas_si(3).jpg" price= {5.00} amount = {1} url_redirect= {`/categories/plants/${category}/1`} name = "Name"/>
-              <ProductCardSearch  url = "/images/conjunto_minimalista_de_macetas_para_plantas_si(3).jpg" price= {5.00} amount = {1} url_redirect= {`/categories/plants/${category}/1`} name = "Name"/>
-              <ProductCardSearch  url = "/images/conjunto_minimalista_de_macetas_para_plantas_si(3).jpg" price= {5.00} amount = {1} url_redirect= {`/categories/plants/${category}/1`} name = "Name"/>
-              <ProductCardSearch  url = "/images/conjunto_minimalista_de_macetas_para_plantas_si(3).jpg" price= {5.00} amount = {1} url_redirect= {`/categories/plants/${category}/1`} name = "Name"/>
-              <ProductCardSearch  url = "/images/conjunto_minimalista_de_macetas_para_plantas_si(3).jpg" price= {5.00} amount = {1} url_redirect= {`/categories/plants/${category}/1`} name = "Name"/>
+          {category === "All" ? 
+            plants.map((item: any) => {
+                return <ProductCardSearch key={item.id}  url = {item.image} price= {item.cost} amount = {1} url_redirect= {`/categories/accesories/${category}/${item.id}`} name = {item.name}/>
+            })
+            
+            :
+            plants.filter((accesories: any) => accesories.category === category).map((item: any) => {
+                return <ProductCardSearch key={item.id}   url = {item.image} price= {item.cost} amount = {1} url_redirect= {`/categories/accesories/${category}/${item.id}`} name = {item.name}/>
+            })
+            }
 
           </div>
   
