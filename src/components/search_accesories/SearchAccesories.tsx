@@ -37,9 +37,9 @@ export default function SearchAccesories(){
         type: "Date" 
      });
 
-     useEffect(() => {
-        setIsMounted(true); 
-      }, []);
+    useEffect(() => {
+       setIsMounted(true); 
+    }, []);
 
     if (!validCategories.includes(categoryString)) {
       // Redirige a una página de error o a otro lugar
@@ -54,19 +54,15 @@ export default function SearchAccesories(){
         }));
     };
 
-        
-
-        
-        const handleCategoryChange = (category:string) => {
-            router.push(`/categories/accesories/${category}`);
-            console.log("CATEGORIA", category)
-        };
+    const handleCategoryChange = (category:string) => {
+        router.push(`/categories/accesories/${category}`);
+    };
 
          
 
-          if (!isMounted) {
-            return null; // Or some placeholder content
-           }
+    if (!isMounted) {
+      return null; // Or some placeholder content
+     }
      
     
 
@@ -79,7 +75,13 @@ export default function SearchAccesories(){
           <div className={style.search}>
               <div className={style.result}>
                   <span>Search Result for <span className={style.result_search}>{categoryString}</span></span> 
-                  <span>Showing 6 results</span>
+                  <span>Results
+                  {category === "All" ? 
+                    <span className={style.span}>({accesories.length})</span>
+                    :
+                    <span className={style.span}>({accesories.filter((accesories: any) => accesories.category === category).length})</span>
+                    }
+                    </span>
                   <div className={style.categories_bx}>
                   <div className={categoryString === 'All' ? `${style.categories}  ${style.active}`: `${style.categories} `} onClick={() => handleCategoryChange('All')}>All</div>
                     <div className={categoryString === 'Fertilizers' ? `${style.categories}  ${style.active}`: `${style.categories} `} onClick={() => handleCategoryChange('Fertilizers')}>Fertilizers</div>
