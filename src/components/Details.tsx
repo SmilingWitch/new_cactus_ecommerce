@@ -9,36 +9,33 @@ import { useRouter } from 'next/navigation';
 import ProductCardSearch from "./search_plants/ProductCardSearch";
 import { useState, useEffect } from "react";
 import { useParams } from 'next/navigation'
+import Loader from "./Loader";
 
 
 export default function Details(){
 
     const param = useParams()
-    const id = Number(param.details); // Elimina "/plants/" de la URL
-    console.log("ID",id)
+    const id = Number(param.details);
     const router = useRouter();
 
     // variable
     let allFromsessionStorage = [];
     let filteredCategory = []
     if (typeof window !== 'undefined') {
-    const item = sessionStorage.getItem('all_categories');
-    if (item !== null) {
-        allFromsessionStorage = JSON.parse(item) || [];
-        filteredCategory = allFromsessionStorage.filter((detail: any) => detail.id === id);
+        const item = sessionStorage.getItem('all_categories');
+        if (item !== null) {
+            allFromsessionStorage = JSON.parse(item) || [];
+            filteredCategory = allFromsessionStorage.filter((detail: any) => detail.id === id);
+        }
     }
-}
 
     // states
-    const [res, SetRes] = useState(allFromsessionStorage)
     const [isMounted, setIsMounted] = useState(false);
     const [details, SetDetails] = useState(filteredCategory[0]) 
-
-    console.log("Image", details.image)
+    const [loader, SetLoader] = useState(false)
     
 
     const handleBack = () => {
-        console.log("back")
       router.back();
     };
 
@@ -86,7 +83,14 @@ export default function Details(){
                                     </div>
                                     <div className={style.text}>{details.description}</div>
                                     <div className={style.btn}>
-                                        <button>Add to cart</button>
+                                        {
+                                        loader === true ? 
+                                            <button className={style.loadingBtn}>
+                                                <div><Loader/> Loading</div>
+                                            </button>
+                                            : 
+                                            <button onClick={() => SetLoader(true)}>Add to cart</button>
+                                        }
                                     </div>
                                 </div>
                             </div>
@@ -108,16 +112,9 @@ export default function Details(){
                         <ProductCardSearch url ="/images/britta-preusse-p7KKwjP3s68-unsplash.jpg" 
                                             price = {15} amount={1} url_redirect = "/dd" name = "Name"/>
                     </div>
-                    
                 </div>
-                    
-
-                </div>
-                    
-                
-                
-
             </div>
+        </div>
 
 
     )
