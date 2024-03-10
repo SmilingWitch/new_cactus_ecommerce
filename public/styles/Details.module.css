@@ -120,6 +120,17 @@
 .btn button:hover{
     background:rgb(53, 96, 53) ;
 }
+.loadingBtn:hover{
+    background: var(--colorResalt) !important;
+    cursor: auto;
+}
+.btn button div{
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin-left: 10%;
+    margin-right: 5px;
+} 
 .stars_bx{
     position: relative;
     font-size: 0.8em;
