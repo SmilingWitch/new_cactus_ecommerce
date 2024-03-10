@@ -105,6 +105,18 @@
 .btn button:hover{
     background:rgb(53, 96, 53) ;
 }
+
+.loadingBtn div{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 5px;
+}
+.loadingBtn:hover{
+    background: var(--colorResalt) !important;
+    cursor: auto;
+}
 .account{
     position: relative;
     width: 100%;
