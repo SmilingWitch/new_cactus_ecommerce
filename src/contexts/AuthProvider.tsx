@@ -39,6 +39,7 @@ export function AuthProvider({ children }: AuthProviderProps) {
 
  const router = useRouter()
 
+
  /*--------------------SING IN-------------------- */
  const signIn = async (formValue: any) => {
   console.log("FormValue",formValue)
@@ -62,14 +63,14 @@ export function AuthProvider({ children }: AuthProviderProps) {
     console.log("FormValue",formValue)
     /*router.push('/home')*/
     /*setHasCompanyRequestRun(true)*/
+    
   } catch (error) {
-   console.log(error.response)
    console.log("No se hizo la peticion")
-   
+
  }
  };
 
-
+ 
 
 
  /*--------------------SING OUT--------------------*/
@@ -90,7 +91,6 @@ export function AuthProvider({ children }: AuthProviderProps) {
     sessionStorage.removeItem('send');
     router.push('/accounts/login')
   } catch (error) {
-    console.log(error.response)
     console.log("No se hizo la peticion")
     
   }
@@ -110,69 +110,6 @@ export function AuthProvider({ children }: AuthProviderProps) {
 };
 
 
-/*--------------------OBTEIN PAY CODES--------------------*/
-
-const recibos = async () =>{
-  const token = sessionStorage.getItem('access')
-  console.log(token)
-  console.log("Peticion")
-  try {
-      const response = await axios.get('https://zona0.onrender.com/transfer/list-unpaid-receive/', { 
-         headers: {
-             'Authorization': 'Bearer ' + token
-         }
-       });
-       
-      console.log(response);
-      sessionStorage.setItem('codes', response.data);
-     } catch(error) {
-      console.log(error.response);
-     }    
-   }
-
-
-/*useEffect(() => {
-  const intervalId = setInterval(verifyToken, 840000);
-  return () => clearInterval(intervalId);
-}, []);*/
-
-
-/*useEffect(() => {
-  if (hasCompanyRequestRun === true) {
-    company(); // Llama a la función company solo si no se ha ejecutado previamente
-    setHasCompanyRequestRun(false)
-  }
-  // ... resto del código del useEffect ...
-}, [credential]); // Dependencia en el estado de credential*/
-
-
- 
-
-/*useEffect(() => {
-  if (credential === null) {
-    router.push('/accounts/login');
- }
-  if (typeof window !== 'undefined') {
-    let storedCredential = null;
-      try {
-       storedCredential = JSON.parse(sessionStorage.getItem('credential')) || null;
-      } catch (error) {
-       console.error('Error al analizar los datos de sessionStorage:', error);
-      }
-
-    const storedUser = sessionStorage.getItem('access') || null
-    setUser(storedUser);
-    setCredential(storedCredential);
-  }
-}, []);*/
-
-
-
-/*useEffect(() => {
-  if (credential === null) {
-     router.push('/accounts/login');
-  }
- }, [user]);*/
 
  return (
  <AuthContext.Provider value={{ user, signIn, signOut, credential, updateCredential }}>
