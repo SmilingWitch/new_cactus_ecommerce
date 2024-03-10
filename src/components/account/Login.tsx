@@ -6,17 +6,13 @@ import { useState, useEffect } from "react"
 import axios from "axios"
 import{ useContext } from 'react';
 import { AuthContext } from '../../contexts/AuthContext';
+import Loader from "../Loader"
+import errorVisible from "../function/errorVisible"
+import ErrorDialog from "../ErrorDialog"
 
 export default function Login(){
 
-    const authContext = useContext(AuthContext);
-    if (!authContext) {
-     // Manejar el caso cuando el contexto es null, por ejemplo, mostrando un mensaje de error o redirigiendo al usuario
-     return <div>Error: Contexto no disponible</div>;
-    }
-    const { signIn } = authContext
-
-
+    const [loader, SetLoader] = useState(false)
     const [formValue, SetFormValue] = useState(
         {
             username: "",
@@ -24,6 +20,13 @@ export default function Login(){
         }
     )
 
+    const authContext = useContext(AuthContext);
+    if (!authContext) {
+     // Manejar el caso cuando el contexto es null, por ejemplo, mostrando un mensaje de error o redirigiendo al usuario
+     return <div>Error: Contexto no disponible</div>;
+    }
+    const { signIn } = authContext
+    
     const handleChange= (event:any) =>{
         SetFormValue({
             ...formValue,
@@ -32,56 +35,32 @@ export default function Login(){
         )
     }
 
-    /*const handleSubmit= async (e:any) =>{
-        e.preventDefault()
-        console.log(formValue)
-      try{
-        console.log(formValue)
-        const res = await axios.post('https://cactusshopi.onrender.com/login/', formValue)
-        console.log("response",res.data)
-        setError('')
-        setLoading(false)
-        setCorrect(true)
-      }catch(error){
-        console.log(error.response)
-        /*if (error.response) {
-          setLoading(false)
-            // El servidor respondió con un estado fuera del rango de 2xx
-            setError(error.response.data);
-            console.log(error)
-          } else if (error.request) {
-            alert("Something went wrong. Try in a few minutes!!")
-          } else {
-            alert("Something went wrong. Try in a few minutes!!")
-          }
-          if (error.response.status === 500) {
-            alert("Something went wrong. Try in a few minutes!!")
-          }
-      }
-    }*/
 
     const handleSubmit = async (e:any) => {
-        /*setLoading(true)*/
+        SetLoader(true)
         e.preventDefault();
         try{
           const res = await signIn(formValue);
           /*setError('');*/
           console.log(res)
-          /*setLoading(false)*/
+          SetLoader(false)
+          console.log("PETICION", res)
+          
         }catch(error){
-          /*setError('Unable to log in with provided credentials.')*/
-          console.log(error)
-          /*setLoading(false)*/
+          SetLoader(false)
+
         }
        }
 
+
     return(
         <div className={style.cont}>
-
             <div className={style.form}>
+              
                 <div className={style.logo}>
                     <div className={style.logo_name}><h1>Log in</h1>{/*Cactus Haven*/}</div>
                 </div>
+                
                 
                 <form action="">
                     <div className={style.input_bx}>
@@ -100,7 +79,14 @@ export default function Login(){
                     </div>
                 </form>
                 <div className={style.btn}>
-                    <button onClick={handleSubmit}>Create account</button>
+                {
+                  loader === true ? 
+                      <button className={style.loadingBtn}>
+                          <div><Loader/> Loading</div>
+                      </button>
+                      : 
+                      <button onClick={(e) => handleSubmit(e)}>Login</button>
+                }
                 </div>
 
                 <Link href="/account/forgot_password">
