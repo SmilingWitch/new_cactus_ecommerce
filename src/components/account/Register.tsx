@@ -4,8 +4,14 @@ import Image from "next/image"
 import Link from "next/link"
 import { useState, useEffect } from "react"
 import axios from "axios"
+import Loader from "../Loader"
+import { useRouter } from "next/navigation"
+import ErrorDialog from "../ErrorDialog"
+
 
 export default function Register(){
+
+  const router = useRouter()
 
     const [formValue, SetFormValue] = useState(
         {   name : '',
@@ -16,6 +22,8 @@ export default function Register(){
             image: null
           }
     )
+    const [loader, SetLoader] = useState(false)
+
 
     const handleChange= (event: any) => {
         SetFormValue({
@@ -26,21 +34,22 @@ export default function Register(){
 
       const handleSubmit = async (e:any) => {
         e.preventDefault();
-       /* setLoading(true)*/
+        SetLoader(true)
        console.log(formValue)
       try{
         console.log(formValue)
         const res = await axios.post('https://cactusshopi.onrender.com/user/register/', formValue)
         console.log("response",res.data)
         /*setError('')*/
-        /*setLoading(false)
-        setCorrect(true)*/
-      }catch(error){
+        SetLoader(false)
+        router.push("/account/login")
+        
+      }catch(error:any){
         console.log(error.response)
-        /*if (error.response) {
-          setLoading(false)
+        if (error.response) {
+          SetLoader(false)
             // El servidor respondió con un estado fuera del rango de 2xx
-            setError(error.response.data);
+            /*setError(error.response.data);*/
             console.log(error)
           } else if (error.request) {
             alert("Something went wrong. Try in a few minutes!!")
@@ -49,7 +58,7 @@ export default function Register(){
           }
           if (error.response.status === 500) {
             alert("Something went wrong. Try in a few minutes!!")
-          }*/
+          }
       }
     }
 
@@ -86,15 +95,22 @@ export default function Register(){
                                 placeholder="********"></input>
                     </div>
                 </form>
-                <div className={style.requirement}>
+                {/*<div className={style.requirement}>
                     <span>La contrasena debe tener al menos:</span>
                     <span>- 8 caracteres</span>
                     <span>- 1caracter especial</span>
                     <span>- 1 mayuscula</span>
                     <span>- 1 numero</span>
-                </div>
+                  </div>*/}
                 <div className={style.btn}>
-                    <button onClick={(e) => handleSubmit(e)}>Create account</button>
+                {
+                  loader === true ? 
+                      <button className={style.loadingBtn}>
+                          <div><Loader/> Loading</div>
+                      </button>
+                      : 
+                      <button onClick={(e) => handleSubmit(e)}>Create account</button>
+                }
                 </div>
 
                 <div className={style.account}>
