@@ -9,7 +9,6 @@ export default function Loader(){
                     <ClipLoader
                       color="rgb(245, 245, 245)"
                       cssOverride={{}}
-                      margin={10}
                       size={20}
                       speedMultiplier={1}
                     />
