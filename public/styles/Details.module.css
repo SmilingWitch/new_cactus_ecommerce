@@ -46,6 +46,7 @@
     height: 50dvh;
     border-radius: var(--border-radius);
     overflow: hidden;
+    animation: animation1 2s ease-in  infinite forwards;
 }
 .gallery{
     position: relative;
@@ -168,5 +169,17 @@
         width: 80%;
         margin-bottom: 30px;
         height: 30vh;
+    }
+}
+
+@keyframes animation1 {
+    0%{
+        background: rgb(225, 221, 221);
+    }
+    50%{
+        background: rgb(212, 211, 211);
+    }
+    100%{
+        background: rgb(225, 221, 221);
     }
 }
