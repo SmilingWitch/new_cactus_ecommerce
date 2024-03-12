@@ -63,6 +63,21 @@
 .input_bx .icon{
     font-size: calc(0.8rem + 0.5vw);
 }
+.circle{
+    position: absolute;
+    background: rgb(211, 5, 5);
+    font-size: 0.5em;
+    color: whitesmoke;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "PoppinsBolder";
+    bottom: 20px;
+    left: 10px;
+}
 @media(max-width: 1020px){
     .cont{
       width: 100%;
