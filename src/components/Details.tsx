@@ -10,6 +10,7 @@ import ProductCardSearch from "./search_plants/ProductCardSearch";
 import { useState, useEffect } from "react";
 import { useParams } from 'next/navigation'
 import Loader from "./Loader";
+import Skeletom from "./Skeletom";
 
 
 export default function Details(){
@@ -39,16 +40,95 @@ export default function Details(){
       router.back();
     };
 
+    function addNewProduct(name: string, price : number, image: string, id: number) {
+    
+        const item = localStorage.getItem('products')
+        let products = []
+        if(item !== null){
+            // Intentar recuperar el arreglo existente del almacenamiento local
+             products = JSON.parse(item) || [];
+
+        }
+
+        const existingProductIndex = products.findIndex((product: any)=> product.id === id);
+
+        if(existingProductIndex >= 0 ){
+            products[existingProductIndex].qty += 1
+        } else{
+            // Si el producto no existe, agregarlo al arreglo con cantidad inicial 1
+            products.push({ id: id, name: name, price: price, image: image, qty: 1 });
+        }
+        // Convertir el arreglo a una cadena JSON
+        const productsJson = JSON.stringify(products);
+        // Almacenar el arreglo JSON en el almacenamiento local
+        localStorage.setItem('products', productsJson);
+        console.log(localStorage.getItem('products'))
+
+        window.dispatchEvent(new CustomEvent('cart'));
+        
+    }
+    
     useEffect(() => {
         setIsMounted(true); 
       }, []);
 
 
-
-
-
       if (!isMounted) {
-        return null; // Or some placeholder content
+        return         <div className={style.cont}>
+        <div className="bx">
+            <div className={style.header}>
+                    <div className={style.back} onClick = {handleBack}>
+                        <RiArrowLeftSLine className={style.icon}/>
+                        <span>Back</span>
+                    </div>
+            </div>
+            <div className={style.details_bx}>
+                <div className={style.gallery}>
+                    <div className={style.image1}>
+                           
+                        </div>
+                        <div className={style.product_info}>
+                            <div className={style.info}>
+                                <div className={style.name}>
+                                    <span>{details.name}</span>
+                                    <div className={style.stars_bx}>
+                                    <GoStarFill/>
+                                    <GoStarFill/>
+                                    <GoStarFill/>
+                                    <GoStarFill/>
+                                    <GoStar/>
+                                    </div>
+                                </div>
+                                <div className={style.text}>{details.description}</div>
+                                <div className={style.btn}>
+                                    {
+                                    loader === true ? 
+                                        <button className={style.loadingBtn}>
+                                            <div><Loader/> Loading</div>
+                                        </button>
+                                        : 
+                                        <button onClick={() => addNewProduct( details.name, details.cost , details.image, details.id)}>Add to cart</button>
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                        
+                </div>
+            </div>
+
+            <div className={style.similiar}>
+                <div className={style.header_similar}>
+                        <span>Similar Products</span>
+                </div>
+                <div className={style.images_bx}>
+                    <Skeletom/>
+                    <Skeletom/>
+                    <Skeletom/>
+                    <Skeletom/>
+                </div>
+            </div>
+        </div>
+    </div>
        }
 
     return(
@@ -89,7 +169,7 @@ export default function Details(){
                                                 <div><Loader/> Loading</div>
                                             </button>
                                             : 
-                                            <button onClick={() => SetLoader(true)}>Add to cart</button>
+                                            <button onClick={() => addNewProduct( details.name, details.cost , details.image, details.id)}>Add to cart</button>
                                         }
                                     </div>
                                 </div>
@@ -103,13 +183,13 @@ export default function Details(){
                             <span>Similar Products</span>
                     </div>
                     <div className={style.images_bx}>
-                        <ProductCardSearch url ="/images/britta-preusse-p7KKwjP3s68-unsplash.jpg" 
+                        <ProductCardSearch url ="/media/plants_image/Guantes_para_jard%C3%ADn_Medida_10_Verde.jpg" 
                                             price = {15} amount={1} url_redirect = "/dd" name = "Name"/>
-                        <ProductCardSearch url ="/images/andrea-rico-Npfkyf94cik-unsplash.jpg" 
+                        <ProductCardSearch url ="/media/plants_image/What_is_a_Cactus_Plant_.jpg"
                                             price = {15} amount={1} url_redirect = "/dd" name = "Name"/>
-                        <ProductCardSearch url ="/images/stephanie-harvey-T0inbt7nRME-unsplash.jpg" 
+                        <ProductCardSearch url ="/media/plants_image/cactus_de_navidad.jpg"
                                             price = {15} amount={1} url_redirect = "/dd" name = "Name"/>
-                        <ProductCardSearch url ="/images/britta-preusse-p7KKwjP3s68-unsplash.jpg" 
+                        <ProductCardSearch url ="/media/plants_image/planta_de_Jade.jpg"
                                             price = {15} amount={1} url_redirect = "/dd" name = "Name"/>
                     </div>
                 </div>
