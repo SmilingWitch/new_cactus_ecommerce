@@ -1,15 +1,16 @@
-.cont{
+.cont, .cont1{
     position: relative;
     width: 100%;
     min-height: calc(100vh - 80px);
     padding-bottom: 5vh;
 }
+.cont1{
+    display: flex;
+    align-items: center;
+}
 .cart{
     position: relative;
     width: 100%;
-    /*display: grid;
-    grid-gap: 20px;
-    grid-template-columns: 2fr 1fr;*/
     display: flex;
     justify-content: space-between;
 }
@@ -58,7 +59,12 @@
     height: 30px;
     margin-left: 16px;
 }
-.btn button{
+.btnBx{
+    height: 40px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+.btn button, .btnBx button{
     position: relative;
     width: 100%;
     height: 100%;
@@ -72,9 +78,28 @@
     cursor: pointer;
     transition: 0.3s;
 }
-.btn button:hover{
+.btn button:hover, .btnBx button:hover{
     background:rgb(53, 96, 53) ;
 }
+.imgBx{
+    position: relative;
+    width: 200px;
+    height: 200px;
+    margin: 0 auto;
+    left: -15px;
+}
+.emptyCart{
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.emptyCart h1{
+    text-align: center;
+}
+
 @media(max-width:417px){
     .tota_product_card{
         flex-direction: column;
