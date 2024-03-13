@@ -26,6 +26,8 @@ export default function Shop(){
     const [res, SetRes] = useState(allFromsessionStorage)
     const [isMounted, setIsMounted] = useState(false);
 
+    console.log("RES",res)
+
     const [formValue, setFormValue] = useState({
         type: "Date" 
      });
@@ -179,7 +181,7 @@ export default function Shop(){
           </div>
           </div>
           <div className="bx">
-          { !isMounted || res === null ?
+          { !isMounted || res.length === 0 ?
             <div className={style.plats_bx}>
                 <Skeletom/>
                 <Skeletom/>
