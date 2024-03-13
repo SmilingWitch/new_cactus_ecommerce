@@ -13,6 +13,10 @@ import ErrorDialog from "../ErrorDialog"
 export default function Login(){
 
     const [loader, SetLoader] = useState(false)
+    const [error, SetError] = useState({
+        username: '',
+        password: ''
+      })
     const [formValue, SetFormValue] = useState(
         {
             username: "",
@@ -26,6 +30,7 @@ export default function Login(){
      return <div>Error: Contexto no disponible</div>;
     }
     const { signIn } = authContext
+    const {loginError} = authContext
     
     const handleChange= (event:any) =>{
         SetFormValue({
@@ -63,6 +68,7 @@ export default function Login(){
                 
                 
                 <form action="">
+                <div className={style.loginError}>{loginError}</div>
                     <div className={style.input_bx}>
                         <input type = "text" 
                                 placeholder="username"
@@ -97,7 +103,7 @@ export default function Login(){
 
                 <div className={style.account}>
                     <div>No tienes una cuenta?</div>
-                    <Link href="/account/login"><div className={style.log}>Create account</div></Link>
+                    <Link href="/account/register"><div className={style.log}>Create account</div></Link>
                 </div>
             </div>
         </div>

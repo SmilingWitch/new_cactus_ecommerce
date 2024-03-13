@@ -23,6 +23,11 @@ export default function Register(){
           }
     )
     const [loader, SetLoader] = useState(false)
+    const [error, SetError] = useState({
+      email:'',
+      username: '',
+      password: ''
+    })
 
 
     const handleChange= (event: any) => {
@@ -43,6 +48,11 @@ export default function Register(){
         /*setError('')*/
         SetLoader(false)
         router.push("/account/login")
+        SetError({
+          email:'',
+          username: '',
+          password: ''
+        })
         
       }catch(error:any){
         console.log(error.response)
@@ -50,7 +60,9 @@ export default function Register(){
           SetLoader(false)
             // El servidor respondió con un estado fuera del rango de 2xx
             /*setError(error.response.data);*/
-            console.log(error)
+            console.log(error.response.data.email)
+            SetError(error.response.data)
+            
           } else if (error.request) {
             alert("Something went wrong. Try in a few minutes!!")
           } else {
@@ -62,7 +74,6 @@ export default function Register(){
       }
     }
 
-
     return(
         <div className={style.cont}>
 
@@ -73,6 +84,7 @@ export default function Register(){
                 </div>
                 
                 <form action="">
+                  <div className={style.error}>{error.email}</div>
                     <div className={style.input_bx}>
                         <input type = "email" 
                                 name = "email"
@@ -80,6 +92,7 @@ export default function Register(){
                                 onChange={handleChange}
                                 placeholder="user@gmail.com"></input>
                     </div>
+                    <div className={style.error}>{error.username}</div>
                     <div className={style.input_bx}>
                         <input type = "username" 
                                 name = "username"
@@ -87,6 +100,7 @@ export default function Register(){
                                 onChange={handleChange }
                                 placeholder="username"></input>
                     </div>
+                    <div className={style.error}>{error.password}</div>
                     <div className={style.input_bx}>
                         <input type = "password" 
                                 name = "password"
