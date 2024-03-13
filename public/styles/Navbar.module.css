@@ -27,6 +27,7 @@
 .icon_bx{
     position: relative;
     display: flex;
+    align-items: center;
 }
 .icon{
     margin-left: 20px; 
@@ -37,6 +38,30 @@
     position: relative;
     width: 80px;
     height: 60px;
+}
+.circle{
+    position: absolute;
+    background: rgb(211, 5, 5);
+    font-size: 0.5em;
+    color: whitesmoke;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "PoppinsBolder";
+    bottom: 20px;
+    left: 70px;
+}
+.user{
+    position: relative;
+    width: 30px;
+    height: 30px;
+    background: red;
+    border-radius: 50%;
+    overflow: hidden;
+    
 }
 @media(max-width: 1020px){
     .cont{
