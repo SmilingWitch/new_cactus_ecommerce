@@ -5,6 +5,7 @@ interface AuthContextValue {
     signIn: (formValue: any) => Promise<void>;
     signOut: () => Promise<void>;
     credential: any; // Considera especificar un tipo más concreto para 'credential'
+    loginError: string
     updateCredential: (newCredential: any) => void; // Considera especificar un tipo más concreto para 'newCredential'
    }
 

@@ -24,6 +24,7 @@ export function AuthProvider({ children }: AuthProviderProps) {
   }
 
   const [user, setUser] = useState<string | null>(null);
+  const [loginError, SetLoginError] = useState('')
   const [credential, setCredential] = useState(credentialFromsessionStorage);
   const [hasCompanyRequestRun, setHasCompanyRequestRun] = useState(false);
 
@@ -61,16 +62,18 @@ export function AuthProvider({ children }: AuthProviderProps) {
       setCredential(JSON.parse(item));
     }
     console.log("FormValue",formValue)
-    /*router.push('/home')*/
+    router.push('/home')
     /*setHasCompanyRequestRun(true)*/
+    SetLoginError('')
     
-  } catch (error) {
+  } catch (error: any) {
    console.log("No se hizo la peticion")
+   SetLoginError(error.response.data.error)
+   console.log(error.response.data)
 
  }
  };
 
- 
 
 
  /*--------------------SING OUT--------------------*/
@@ -112,7 +115,7 @@ export function AuthProvider({ children }: AuthProviderProps) {
 
 
  return (
- <AuthContext.Provider value={{ user, signIn, signOut, credential, updateCredential }}>
+ <AuthContext.Provider value={{ user, signIn, signOut, credential, updateCredential, loginError }}>
  {children}
  </AuthContext.Provider>
  );
