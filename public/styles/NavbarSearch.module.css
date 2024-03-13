@@ -26,6 +26,7 @@
 .icon_bx{
     position: relative;
     display: flex;
+    align-items: center;
     
 }
 .icon{
@@ -77,6 +78,15 @@
     font-family: "PoppinsBolder";
     bottom: 20px;
     left: 10px;
+}
+.user{
+    position: relative;
+    width: 30px;
+    height: 30px;
+    background: red;
+    border-radius: 50%;
+    overflow: hidden;
+    
 }
 @media(max-width: 1020px){
     .cont{
