@@ -7,6 +7,8 @@ import { FaUser } from "react-icons/fa";
 import { GoSearch } from "react-icons/go";
 import { TiThMenu } from "react-icons/ti";
 import { useState, useEffect } from "react";
+import{ useContext } from 'react';
+import { AuthContext } from '../../contexts/AuthContext';
 
 interface MyComponentProps {
     setVisible: (visible: boolean) => void;
@@ -14,7 +16,7 @@ interface MyComponentProps {
 
 
 export default function NavbarSearch(props: React.PropsWithChildren<MyComponentProps>){
-
+    
     let productsFromLocalStorage = []
     if(typeof window !== "undefined"){
        const item = localStorage.getItem('products')
@@ -51,6 +53,14 @@ export default function NavbarSearch(props: React.PropsWithChildren<MyComponentP
         };
 
       }, []);
+
+    const authContext = useContext(AuthContext);
+        if (!authContext) {
+         // Manejar el caso cuando el contexto es null, por ejemplo, mostrando un mensaje de error o redirigiendo al usuario
+         return <div>Error: Contexto no disponible</div>;
+        }
+    const { user } = authContext
+
 
       if(!isMounted ){
             return(
@@ -118,9 +128,19 @@ export default function NavbarSearch(props: React.PropsWithChildren<MyComponentP
                    null}
                    
                 </div>
-                <div className={style.icon}>
+                {user === null ? <div className={style.icon}>
                     <Link href = "/account/register"><FaUser/></Link>
+                </div> :
+                <div className={style.icon}>
+                    <div className={style.user}>
+                    <Image src = "/images/imagenPorDefecto.png"
+                            layout="fill"
+                            objectFit="cover"
+                            alt = "Description"/>
+                    </div>
+
                 </div>
+                }
                 <div className={style.icon} onClick={() => props.setVisible(true)}>
                     <TiThMenu/>
                 </div>
