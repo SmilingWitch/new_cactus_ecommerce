@@ -11,6 +11,8 @@ import { useState, useEffect } from "react";
 import { useParams } from 'next/navigation'
 import Loader from "./Loader";
 import Skeletom from "./Skeletom";
+import errorVisible from "./function/errorVisible"
+import ErrorDialog from "./ErrorDialog";
 
 
 export default function Details(){
@@ -34,6 +36,7 @@ export default function Details(){
     const [isMounted, setIsMounted] = useState(false);
     const [details, SetDetails] = useState(filteredCategory[0]) 
     const [loader, SetLoader] = useState(false)
+    const [objectVisible, SetObjectVisible] = useState(false)
     
 
     const handleBack = () => {
@@ -47,9 +50,7 @@ export default function Details(){
         if(item !== null){
             // Intentar recuperar el arreglo existente del almacenamiento local
              products = JSON.parse(item) || [];
-
         }
-
         const existingProductIndex = products.findIndex((product: any)=> product.id === id);
 
         if(existingProductIndex >= 0 ){
@@ -62,10 +63,19 @@ export default function Details(){
         const productsJson = JSON.stringify(products);
         // Almacenar el arreglo JSON en el almacenamiento local
         localStorage.setItem('products', productsJson);
+        loading()
         console.log(localStorage.getItem('products'))
 
-        window.dispatchEvent(new CustomEvent('cart'));
         
+    }
+
+    function loading(){
+        SetLoader(true);
+        setTimeout(() => {
+            SetLoader(false);
+            errorVisible(SetObjectVisible)
+            window.dispatchEvent(new CustomEvent('cart'));  
+        }, 2000);
     }
     
     useEffect(() => {
@@ -75,6 +85,7 @@ export default function Details(){
 
       if (!isMounted) {
         return         <div className={style.cont}>
+            
         <div className="bx">
             <div className={style.header}>
                     <div className={style.back} onClick = {handleBack}>
@@ -133,6 +144,7 @@ export default function Details(){
 
     return(
         <div className={style.cont}>
+            <ErrorDialog error = "Added to cart!" visible = {objectVisible}/>
             <div className="bx">
                 <div className={style.header}>
                         <div className={style.back} onClick = {handleBack}>
@@ -188,6 +200,8 @@ export default function Details(){
                         <ProductCardSearch url ="/media/plants_image/What_is_a_Cactus_Plant_.jpg"
                                             price = {15} amount={1} url_redirect = "/dd" name = "Name"/>
                         <ProductCardSearch url ="/media/plants_image/cactus_de_navidad.jpg"
+                                            price = {15} amount={1} url_redirect = "/dd" name = "Name"/>
+                        <ProductCardSearch url ="/media/plants_image/planta_de_Jade.jpg"
                                             price = {15} amount={1} url_redirect = "/dd" name = "Name"/>
                         <ProductCardSearch url ="/media/plants_image/planta_de_Jade.jpg"
                                             price = {15} amount={1} url_redirect = "/dd" name = "Name"/>
