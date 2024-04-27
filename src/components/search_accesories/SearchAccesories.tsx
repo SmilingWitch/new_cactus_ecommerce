@@ -230,7 +230,7 @@ export default function SearchAccesories(){
               </div>
           </div>
 
-          { !isMounted || accesories === null ?
+          { !isMounted || accesories.length === 0 ?
             <div className={style.plats_bx}>
                 <Skeletom/>
                 <Skeletom/>
