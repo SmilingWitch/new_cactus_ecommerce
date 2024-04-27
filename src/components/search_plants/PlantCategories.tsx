@@ -233,7 +233,7 @@ export default function PlantCategories(){
                   
               </div>
           </div>
-          { !isMounted || plants === null ?
+          { !isMounted || plants.length === 0 ?
             <div className={style.plats_bx}>
                 <Skeletom/>
                 <Skeletom/>
