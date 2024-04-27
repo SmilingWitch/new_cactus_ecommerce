@@ -78,7 +78,7 @@ export default function NavbarSearch(props: React.PropsWithChildren<MyComponentP
                 <div className={style.headers}>
                     <div className={style.input_bx}>
                         <input type="text" name="" id="" placeholder="Search..." />
-                        <div className={style.icon_bx}><GoSearch className={style.icon}/>
+                        <div className={style.icon_bx}><GoSearch className={style.search}/>
                         </div>
                     </div>
                     
@@ -115,7 +115,7 @@ export default function NavbarSearch(props: React.PropsWithChildren<MyComponentP
                 <div className={style.headers}>
                     <div className={style.input_bx}>
                         <input type="text" name="" id="" placeholder="Search..." />
-                        <div className={style.icon_bx}><GoSearch className={style.icon}/>
+                        <div className={style.icon_bx}><GoSearch className={style.icon1}/>
                         </div>
                     </div>
                     

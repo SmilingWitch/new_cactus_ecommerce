@@ -3,12 +3,21 @@
     position: absolute;
     z-index: 1000000;
     border-bottom: 1px solid rgba(142, 140, 140,0.3);
-    width: 100%;
     padding-bottom: 15px;
+    height: 100px;
     width: 1000px;
     margin: 0 auto;
+    display: flex;
+    align-items: center;
 }
 
+.logo_bx{
+    position: relative;
+    width: 80px;
+    height: 60px;
+    padding-left: 10px;
+    margin-top: 14px;
+}
 .cont{
     position: relative;
     width: 100%;

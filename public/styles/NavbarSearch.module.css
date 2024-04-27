@@ -1,11 +1,12 @@
 .cont{
     position: relative;
-    height: 80px;
+    height: 100px;
     width: 1000px;
     margin: 0 auto;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    border-bottom: 1px solid rgba(142, 140, 140,0.3);
 }
 .logo{
     position: relative;
@@ -27,11 +28,18 @@
     position: relative;
     display: flex;
     align-items: center;
-    
 }
 .icon{
-    position: relative;
+    /*position: relative;
     margin-right: 20px; 
+    font-size: calc(0.8rem + 0.4vw);
+    cursor: pointer;*/
+    margin-left: 20px; 
+    font-size: 1.2em;
+    cursor: pointer;
+}
+.icon_bx .icon1{
+    position: relative; 
     font-size: calc(0.8rem + 0.4vw);
     cursor: pointer;
 }
@@ -51,6 +59,7 @@
     padding-left: 10px;
     padding-right: 10px;
     border: 1px solid rgba(169, 167, 167, 0.4);
+    
 }
 .input_bx input{
     position: relative;
@@ -61,7 +70,7 @@
     color: var(--font_color);
     font-size: 0.8em;
 }
-.input_bx .icon{
+.input_bx .icon_bx1 .icon{
     font-size: calc(0.8rem + 0.5vw);
 }
 .circle{
