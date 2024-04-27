@@ -196,15 +196,15 @@ export default function Details(){
                     </div>
                     <div className={style.images_bx}>
                         <ProductCardSearch url ="/media/plants_image/Guantes_para_jard%C3%ADn_Medida_10_Verde.jpg" 
-                                            price = {15} amount={1} url_redirect = "/dd" name = "Name"/>
+                                            price = {15} amount={1} url_redirect = "/shop/21" name = "Name"/>
                         <ProductCardSearch url ="/media/plants_image/What_is_a_Cactus_Plant_.jpg"
-                                            price = {15} amount={1} url_redirect = "/dd" name = "Name"/>
+                                            price = {15} amount={1} url_redirect = "/shop/13" name = "Name"/>
                         <ProductCardSearch url ="/media/plants_image/cactus_de_navidad.jpg"
-                                            price = {15} amount={1} url_redirect = "/dd" name = "Name"/>
+                                            price = {15} amount={1} url_redirect = "/shop/16" name = "Name"/>
                         <ProductCardSearch url ="/media/plants_image/planta_de_Jade.jpg"
-                                            price = {15} amount={1} url_redirect = "/dd" name = "Name"/>
-                        <ProductCardSearch url ="/media/plants_image/planta_de_Jade.jpg"
-                                            price = {15} amount={1} url_redirect = "/dd" name = "Name"/>
+                                            price = {15} amount={1} url_redirect = "/shop/17" name = "Name"/>
+                        <ProductCardSearch url ="/media/plants_image/San_pedro.jpg"
+                                            price = {15} amount={1} url_redirect = "/shop/18" name = "Name"/>
                     </div>
                 </div>
             </div>
